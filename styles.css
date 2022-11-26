@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@font-face {
+    font-family: Creato Display;
+    src: url(C:\Users\UserW10\AppData\Local\Microsoft\Windows\Fonts\CreatoDisplay-regular.otf);
+}
+
+:root {
+    /* COLORS  */
+    --bg-color: #FEFEFD;
+    --accent-color: #FC5101;
+    --first-color: #FCD937;
+    --second-color: #FFB4ED; 
+    --third-color: #008A69;
+
+    /* FONTS  */
+    --font-family: Creato Display;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-color);
+    padding: 2rem 4rem;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    column-gap: 2rem;
+}
+
+.logo{
+    width: 200px;
+}
+
+.nav-item{
+    font-family: var(--font-family);
+    color: black;
+    text-transform: uppercase;
+}
+
+.nav-item:hover{
+    color: var(--accent-color);
+}
