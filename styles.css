@@ -24,13 +24,13 @@
 
 body{
     background-color: var(--bg-color);
-    padding: 2rem 4rem;
 }
 
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 4rem 0;
 }
 
 ul{
@@ -46,6 +46,21 @@ nav ul{
     column-gap: 2rem;
 }
 
+h1,h2{
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+
+h2{
+    font-style: italic;
+    font-weight: 400;
+}
+
+section{
+    margin-top: 1rem;
+}
+
 .logo{
     width: 200px;
 }
@@ -58,4 +73,98 @@ nav ul{
 
 .nav-item:hover{
     color: var(--accent-color);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-row{
+    height: 166px;
+}
+
+.home-semi-row--pink{
+    display: flex;
+    background-color: var(--second-color);
+}
+
+.circle{
+    border: 4px solid white;
+    height: 100%;
+    width: 166px;
+    margin-left: -5.3rem;
+    border-radius: 50%;
+}
+
+.home-semi-row--orange{
+    background-color: var(--accent-color);
+}
+
+.home-semi-row--black{
+    background-color: black;
+}
+
+.home-semi-row--text, .home-semi-row--yellow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-semi-row--star{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem;
+}
+
+.home-semi-row--yellow{
+    background-color: var(--first-color);
+}
+
+.home-semi-row--yellow img{
+    width: 100px;
+}
+
+.grid--star{
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+}
+
+.grid-six-columns{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.grid-six-columns span:first-child{
+    background-color: var(--second-color);
+}
+
+.grid-six-columns span:nth-child(2){
+    background-color: #FFC2F0;
+}
+
+.grid-six-columns span:nth-child(3){
+    background-color: #FFCFF3;
+}
+
+.grid-six-columns span:nth-child(4){
+    background-color: #FFE3F8;
+}
+
+.grid-six-columns span:nth-child(5){
+    background-color: #FDEDFA;
+}
+
+.grid-six-columns span:nth-child(6){
+    background-color: var(--bg-color);
+}
+
+.star{
+    width: 50px;
 }
