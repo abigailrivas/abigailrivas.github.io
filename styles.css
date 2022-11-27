@@ -22,6 +22,14 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--first-color);
+}
+
 body{
     background-color: var(--bg-color);
 }
@@ -46,7 +54,11 @@ nav ul{
     column-gap: 2rem;
 }
 
-h1,h2{
+h1, h2, h4, p{
+    font-family: var(--font-family);
+}
+
+h1, h2{
     font-family: var(--font-family);
     text-transform: uppercase;
     font-size: 3.5rem;
@@ -57,10 +69,28 @@ h2{
     font-weight: 400;
 }
 
+p{
+    margin: 1.5rem 0 2.5rem;
+    line-height: 1.6rem;
+}
+
 section{
     margin-top: 1rem;
 }
 
+/* ============== COMMON CLASSES ============== */
+.star{
+    width: 50px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+
+/* ============== HEADER ============== */
 .logo{
     width: 200px;
 }
@@ -75,11 +105,9 @@ section{
     color: var(--accent-color);
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-}
 
+
+/* ============== INICIO ============== */
 .column{
     display: flex;
     flex-direction: column;
@@ -165,6 +193,54 @@ section{
     background-color: var(--bg-color);
 }
 
-.star{
-    width: 50px;
+/* ============== PROYECTOS ============== */
+.proyectos{
+    padding: 4rem;
+    position: relative;
+}
+
+.proys-header-container{
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.proys-header{
+    width: 250px;
+}
+
+.star--small{
+    margin-top: -0.8rem;
+    width:40px;
+}
+
+.proyectos h4{
+    margin-top: 3rem;
+    font-size: 1.1rem;
+}
+
+.bg-decoration--pink{
+    position: absolute;
+    left: 0;
+    top: 12%;
+    width: 100%;
+    z-index: -1;
+}
+
+.bg-decoration--green{
+    position: absolute;
+    left: 0;
+    top: 52%;
+    width: 100%;
+    z-index: -1;
+}
+
+.grid--proys{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+
+.proy img{
+    width: 450px;
 }
