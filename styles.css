@@ -27,7 +27,12 @@
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: var(--first-color);
+    background-color: var(--accent-color);
+}
+
+::selection{
+    color: white;
+    background-color: var(--accent-color);
 }
 
 body{
@@ -52,6 +57,7 @@ a{
 }
 
 nav ul{
+    width: 70%;
     display: flex;
     column-gap: 2rem;
 }
@@ -125,7 +131,7 @@ footer{
 
 /* ============== HEADER ============== */
 .logo{
-    width: 200px;
+    width: 22%;
 }
 
 .nav-item{
@@ -161,6 +167,16 @@ footer{
     width: 166px;
     margin-left: -5.3rem;
     border-radius: 50%;
+    animation: move 1s ease-out infinite;
+}
+
+@keyframes move{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
 }
 
 .home-semi-row--orange{
@@ -281,6 +297,11 @@ footer{
     margin-top: 2rem;
 }
 
+.proy p{
+    width: 450px;
+    word-wrap: break-word;
+}
+
 .proy img{
     width: 450px;
 }
@@ -306,6 +327,7 @@ footer{
 
 .about-me-title{
     width: 200px;
+    margin-bottom: 2rem;
 }
 
 .about-me .rect{
@@ -319,6 +341,12 @@ footer{
     right: 3.5rem;
     bottom: 1rem;
     width: 80px;
+}
+
+.grid--about p{
+    width: 340px;
+    word-wrap: break-word;
+
 }
 
 .about-me-sections{
@@ -414,7 +442,174 @@ footer{
     width: 180px;
 }
 
-
 .contact{
     justify-self: end;
+}
+
+
+@media screen and (max-width: 560px) {
+    .logo{
+        width: 80%;
+        margin-left: 1.5rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    h1, h2{
+        font-size: 2rem;
+    }
+
+    h3{
+        font-size: 1.5rem;
+    }
+
+    h4{
+        font-size: 1rem;
+    }
+
+    p, span{
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+
+    footer{
+        grid-template-columns: 1fr;
+    }
+
+    .star{
+        width: 30px;
+    }
+
+    .star--small{
+        width: 10%;
+    }
+
+    .proyectos, .about-me{
+        padding: 2rem;
+    }
+
+
+    /* HOME  */
+    .home-row{
+        height: 150px;
+    }
+
+    .circle{
+        width: 100%;
+        margin-left: -2rem;
+    }
+
+    .home-semi-row--star{
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .home-semi-row--text:nth-child(2){
+        padding-left: 2rem;
+    }
+
+    .home-semi-row--yellow img{
+        padding: 0 1rem;
+    }
+
+    /* PROY  */
+    .proyectos h4{
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+
+    .proys-header-container{
+        column-gap: 1rem;
+    }
+
+    .proys-header{
+        width: 60%;
+    }
+
+    .bg-decoration--pink{
+        top: 10%;
+        height: 200px;
+        width: 100%;
+    }
+
+    .bg-decoration--yellow{
+        top: 49%;
+        height: 200px;
+        width: 100%;
+    }
+
+    .bg-decoration--green{
+        top: 90%;
+        height: 200px;
+        width: 100%;
+    }
+
+    .grid--proys{
+        grid-template-columns: 1fr;
+        gap: 0rem;
+    }
+
+    .proy h4{
+        margin-top: 1rem;
+    }
+
+    .proy img{
+        width: 100%;
+    }
+
+    .proy p{
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .proy-circula img{
+        width: 110%;
+    }
+
+    /* ABOUT ME */
+    .about-me-title{
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .about-me .rect{
+        display: none;
+    }
+
+    .about-me .semicircle{
+        display: none;
+    }
+
+    .about-me div .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .competencias__title, .en-progreso__title{
+        margin-right: 1rem;
+    }
+
+    .competencias__title{
+        width: 70%;
+    }
+
+    .en-progreso__title{
+        width: 50%;
+    }
+
+    .grid--about{
+        grid-template-columns: 1fr;
+    }
+
+    .grid--about p{
+        width: 100%;
+    }
+
+    /* FOOTER  */
+    .footer-img{
+        justify-content: left;
+        order: 2;
+    }
+
 }
