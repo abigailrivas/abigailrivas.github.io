@@ -447,7 +447,7 @@ footer{
 }
 
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 820px) {
     .logo{
         width: 80%;
         margin-left: 1.5rem;
@@ -476,6 +476,7 @@ footer{
 
     footer{
         grid-template-columns: 1fr;
+        padding: 2rem;
     }
 
     .star{
@@ -493,7 +494,7 @@ footer{
 
     /* HOME  */
     .home-row{
-        height: 150px;
+        height: 140px;
     }
 
     .circle{
@@ -501,9 +502,13 @@ footer{
         margin-left: -2rem;
     }
 
+    .grid--star{
+        grid-template-columns: repeat(2,1fr);
+    }
+
     .home-semi-row--star{
         flex-direction: column;
-        padding: 1rem;
+        padding: 1rem 0;
     }
 
     .home-semi-row--text:nth-child(2){
@@ -511,7 +516,7 @@ footer{
     }
 
     .home-semi-row--yellow img{
-        padding: 0 1rem;
+       width: 70%;
     }
 
     /* PROY  */
@@ -565,7 +570,7 @@ footer{
     }
 
     .proy-circula img{
-        width: 110%;
+        width: 100%;
     }
 
     /* ABOUT ME */
@@ -608,8 +613,13 @@ footer{
 
     /* FOOTER  */
     .footer-img{
-        justify-content: left;
+        margin-top: 1rem;
+        justify-self: left;
         order: 2;
+    }
+
+    .contact{
+        justify-self: left;
     }
 
 }
