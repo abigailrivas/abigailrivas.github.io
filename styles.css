@@ -78,14 +78,19 @@ section{
     margin-top: 1rem;
 }
 
+
 /* ============== COMMON CLASSES ============== */
+.proyectos, .about-me{
+    padding: 2rem 4rem;
+}
+
 .star{
     width: 50px;
 }
 
 .star--small{
     margin-top: -0.8rem;
-    width:40px;
+    width: 40px;
 }
 
 .star, .star--small {
@@ -214,7 +219,7 @@ section{
 
 /* ============== PROYECTOS ============== */
 .proyectos{
-    padding: 4rem;
+    padding-top: 4rem;
     position: relative;
 }
 
@@ -281,4 +286,70 @@ section{
 
 .proy-circula img{
     width: 800px;
+}
+
+
+/* ============== ABOUT ME ============== */
+.about-me{
+    position: relative;
+}
+
+.about-me-title{
+    width: 200px;
+}
+
+
+
+.about-me .rect{
+    position: absolute;
+    right: 4rem;
+    width: 50px;
+}
+
+.about-me .semicircle{
+    position: absolute;
+    right: 3.5rem;
+    bottom: 2rem;
+    width: 80px;
+}
+
+.about-me-sections{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.competencias, .competencias-content, .en-progreso, .en-progreso-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.competencias-header, .en-progreso-header{
+    display: flex;
+    align-items: center;
+}
+
+.competencias__title{
+    width: 250px;
+    margin-right: 2rem;
+}
+
+.competencias-content div, .en-progreso-content div{
+    display: flex;
+    align-items: center;
+}
+
+.dot{
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 0.8rem;
+}
+
+.en-progreso__title{
+    width: 190px;
+    margin-right: 2rem;
 }
