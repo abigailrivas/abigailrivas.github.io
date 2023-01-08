@@ -282,7 +282,7 @@ footer{
 .bg-decoration--green{
     position: absolute;
     left: 0;
-    top: 74%;
+    top: 65%;
     width: 100%;
     z-index: -1;
 }
@@ -516,7 +516,7 @@ footer{
     }
 
     .home-semi-row--yellow img{
-       width: 50%;
+        width: 50%;
     }
 
     /* PROY  */
@@ -546,7 +546,7 @@ footer{
     }
 
     .bg-decoration--green{
-        top: 90%;
+        top: 85%;
         height: 200px;
         width: 100%;
     }
