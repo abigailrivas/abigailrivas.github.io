@@ -443,6 +443,7 @@ footer{
 }
 
 
+/* ======= MOVIL ========= */
 @media screen and (min-width: 360px) and (max-width: 767px) {
     .logo{
         width: 80%;
@@ -617,10 +618,11 @@ footer{
     .contact{
         justify-self: left;
     }
-
 }
 
-@media screen and (min-width: 768px) and (max-width: 1340px) {
+
+/* ======= TABLET ========= */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
     .logo{
         width: 70%;
         margin-left: 6rem;
@@ -802,10 +804,10 @@ footer{
     
 }
 
-
-@media screen and (min-width: 1341px) {
+/* ======= DESKTOP ========= */
+@media screen and (min-width: 1350px) and (max-width: 1920px) {
     .logo{
-        width: 30%;
+        width: 25%;
     }
 
     nav ul{
@@ -820,11 +822,11 @@ footer{
     }
 
     h3{
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     li{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     p, span{
@@ -882,7 +884,7 @@ footer{
 
     /* PROY  */
     .proyectos h4{
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         margin-top: 3rem;
     }
 
@@ -892,7 +894,7 @@ footer{
 
     .proys-header{
         margin-top: 2rem;
-        width: 30%;
+        width: 25%;
     }
 
     .bg-decoration--pink{
@@ -955,15 +957,20 @@ footer{
     }
 
     .competencias__title{
-        width: 60%;
+        width: 50%;
     }
 
     .en-progreso__title{
-        width: 60%;
+        width: 40%;
     }
 
     .grid--about{
-        grid-template-columns: 1fr;
+        margin-top: 2rem;
+        grid-template-columns: repeat(1fr,2);
+    }
+
+    .grid--about p{
+        width: 85%;
     }
 
     .dot{
@@ -974,12 +981,10 @@ footer{
     /* FOOTER  */
     .footer-img{
         margin-top: 1rem;
-        justify-self: left;
-        order: 2;
     }
 
-    .contact{
-        justify-self: left;
+    .contact p, .contact a{
+        font-size: 1.5rem;
     }
     
 }
