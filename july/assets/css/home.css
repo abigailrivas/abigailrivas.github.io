@@ -1,0 +1,298 @@
+@import url("variables&base.css");
+
+/* ============ PROMOTIONAL BAR ============= */
+
+.promotional-bar{
+    margin-top: 1rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid white;
+}
+
+.promotional-text{
+    display: flex;
+    column-gap: 1rem;
+    color: white;
+}
+
+
+/* ========= HOME ======== */
+.home{
+    display: flex;
+    padding: 2rem 3rem;
+}
+
+.home__data{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+}
+
+.home__subtitle{
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.blink{
+    margin-top: -2rem;
+    margin-left: -0.8rem;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    background-size: contain;
+}
+
+.home__img{
+    width: 50%;
+}
+
+.home__photo{
+    width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: 3rem;
+}
+
+.video-viewport{
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: -1;
+    height: 830px; 
+} 
+
+video{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.2rem;
+}
+
+
+/* ========= FEEDBACK FROM COMPANIES ======== */
+.feedback__row{
+    margin-top: 9rem;
+    margin-bottom: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.feedback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.feedback-text{
+    font-size: 1.4rem;
+}
+
+.feedback-logo{
+    width: 300px;
+    object-fit: contain;
+}
+
+#logo-fastcompany{
+    width: 200px;
+}
+
+
+/* ========= FEATURES ======== */
+.feature{
+    display: flex;
+    margin: 0 3rem 6rem;
+}
+
+.feature-list{
+    display: flex;
+    padding: 0rem 0rem;
+}
+
+.feature-image{
+    width: 50%;
+}
+
+.feature-photo{
+    width: 90%;
+}
+
+.feature__data{
+    padding-left: 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+}
+.feature__title{
+    color: black;
+    text-align: start;
+}
+
+.accordion-body{
+    color: black;
+}
+
+
+/* ========= COLOR CHOICES ======== */
+
+.color-choices{
+    background-color: white;
+    padding-top: 0rem;
+    padding-bottom: 4rem;
+    max-width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.color-choices-title{
+    font-size: 2.5rem;
+    color: black;
+    padding-bottom: 1rem;
+}
+
+.guarantee{
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.color-choices-text{
+    text-align: center;
+    color: black;   
+}
+
+.air-conditioner{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.color-choices-button{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;  
+}
+/* ========= SPOTIFY ======== */
+
+
+.blink2{
+    margin-top: -2.5rem;
+    margin-left: 0.3rem;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    background-size: contain;
+}
+
+.spotify{
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    border-radius: 20px;
+    max-width: 100%; 
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+
+
+.playlist{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem 2rem;
+    max-width: 44rem;
+    background-color: #1db954;
+    border-radius: 1rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.spotify-logo{
+    width: 10rem;
+}
+.spotify-text{
+    color: black;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+}
+
+.spotify-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spotify__button{
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: #FFD600;
+    border-radius: 2rem;
+    box-shadow: 0 0 60px #fcd23a;
+}
+
+.spotify__button-text{
+    text-align: center;
+}
+
+
+/* ========= ABOUT ======== */
+
+.section__about{
+    background-color: white;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    max-width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    align-items: center;
+}
+.about__title{
+    color:#5ab9e1;
+}
+
+.button__secondary{
+    border-radius: 2rem;
+    border: 2px solid #FFD600;
+}
+
+
+/* ========= FOOTER ======== */
+
+.footer{
+    background-color: #5ab9e1;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    max-width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.footer__insta{
+    display: flex;
+    justify-content: center;
+}
+
+
+

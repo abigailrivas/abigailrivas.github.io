@@ -1,0 +1,130 @@
+/* ========= FONTS ======== */
+@import url(//db.onlinewebfonts.com/c/6228016f2b172c06410f3a2356d33f6c?family=Roobert-Regular);
+
+@font-face {
+    font-family: "WT Monarch Nova"; 
+    src: url("//db.onlinewebfonts.com/t/5e4df315bceb4e9c81342f0cfbc7dbf8.woff") format("woff"); 
+} 
+
+/* ========= VARIABLES ======== */
+:root{
+    /* ========= COLORS ======== */
+    --accent-color: #FFD600;
+    --secondary-color: #5ab9e1;
+    --btn-box-shadow: #fcd23a;
+
+    /* ========= FONTS ======== */
+    --font-family-header: WT Monarch Nova;
+    --font-family-text: Roobert-regular;
+    --font-regular: 200;
+    --font-medium: 500;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-family-text);
+}
+
+h1,h3{
+    font-family: var(--font-family-header);
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+
+h3{
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* ========= HEADER ======== */
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+}
+
+.header-sticky{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    height: 6rem;
+    z-index: 1000;
+    border-bottom: 1px solid  #d9d9d9;
+}
+
+.header-sticky .nav__link{
+    color: var(--secondary-color);
+}
+
+.nav__menu{
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__link{
+    position: relative;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.nav__link:hover{
+    color: var(--accent-color);
+}
+
+.nav__link--active::after{
+    content: "";
+    background-image: url("/july/assets/images/wave-underline.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+}
+
+
+/* ========= BUTTONS ======== */
+.cta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: var(--accent-color);
+    border-radius: 2rem;
+    width: 250px;
+    height: 3.5rem;
+    box-shadow: 0 0 60px var(--btn-box-shadow);
+}
+
+.button-text{
+    color: black;
+    margin-bottom: 0;
+}
