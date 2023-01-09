@@ -45,7 +45,6 @@
 .home__content{
     padding: 1rem 2rem; 
     display: flex;
-    flex-direction: row;
 }
 
 .home__content-title{
@@ -170,11 +169,9 @@
     }
 }
 
-
 /*============ SHOP ============*/
 .shop{
     display: flex;
-    flex-direction: row;
     padding-bottom: 3rem;
 }
 
@@ -200,7 +197,6 @@
 
 .testimonials__container{
     display: flex;
-    flex-direction: row;
     column-gap: 1rem;
 }
 
@@ -290,3 +286,51 @@
     margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 300px) and (max-width: 767px) {
+        .home__logo{
+            padding: 1rem;
+            width: 70%;
+        }
+
+        .home__content{
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+
+        .home__content-title, .home__info{
+            width: 100%;
+        }
+
+        .product{
+            flex-direction: column;
+            row-gap: 3rem;
+        }
+
+        .shop{
+            flex-direction: column;
+            padding-bottom: 0;
+        }
+
+        .shop__description{
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .testimonials__container{
+            flex-direction: column;
+        }
+
+        .spotify{
+            flex-direction: column;
+        }
+
+        .spotify__playlist, .spotify__description{
+            width: 100%;
+        }
+
+        .spotify__playlist__link{
+            position: absolute;
+            left: 0rem;
+            margin-top: 3rem;
+        }
+}
