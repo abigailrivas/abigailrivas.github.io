@@ -189,6 +189,7 @@ ul{
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
+    justify-content: center;
     text-align: center;
 }
 
@@ -236,6 +237,7 @@ ul{
 
 .shop__product img{
     height: 500px;
+    width: 100%;
     object-fit: cover;
     border-left: 1px solid var(--color--brand--second);
 }
@@ -311,7 +313,6 @@ ul{
 .footer__subscription__form{
     margin-top: 1.5rem;
     display: flex;
-    flex-direction: row;
 }
 
 .input__email{
@@ -354,11 +355,112 @@ ul{
         display: none;
     }
 
+    .shop__product{
+        width: 100%;
+        margin-bottom: -1rem;
+    }
+    
+    .shop__product img{
+        height: 500px;
+        object-fit: cover;
+        border-top: 1px solid var(--color--brand--second);
+    }
+
     .grid-two-col{
         grid-template-columns: 1fr;
     }
     
     .footer{
         flex-direction: column;
+    }
+    
+    .footer__image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        width: 100%;
+        order:2;
+    }
+    
+    .footer__image, .footer__subscription{
+        border-top: 1px solid var(--color--brand--second);
+        border-right: none;
+    }
+    
+    .footer__subscription{
+        border-bottom: 1px solid var(--color--brand--second);
+        padding: 3rem 1rem;
+        width: 100%;
+    }
+
+    .footer__subscription__form{
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .input__email{
+        width: 100%;
+    }
+
+    .footer__nav__container{
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 2rem 1rem;
+        row-gap: 2rem;
+    }
+
+    .social-media__container{
+        flex-direction: row;
+        margin-top: 1rem;
+        margin-left: 0;
+        column-gap: 2rem;
+        justify-content: center;
+    }
+
+    #socialMediaIcon{
+        width: 150%;
+        height: 150%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1254px){
+    .logo--header{
+        left: 30%;
+    }
+
+    .shop__product{
+        width: 100%;
+        margin-top: -1rem;
+    }
+
+    .footer__image{
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    
+    .footer__subscription{
+        width: 53%;
+        padding: 2rem;
+    }
+
+    .footer__subscription__form{
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .input__email{
+        width: 100%;
+        height: 50px;
+    }
+
+    .footer__nav__container{
+        position: relative;
+    }
+
+    .social-media__container{
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
     }
 }
