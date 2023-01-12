@@ -20,7 +20,6 @@
 
 .grid-two-col img{
     object-fit: cover;
-    height: 100%;
 }
 
 .about-us__description{
@@ -46,22 +45,7 @@
         row-gap: 7%;
     }
 
-    .about-us__description p{
+    .about-us__description p, .save-planet-img{
         width: 100%;
-    }
-
-    .save-planet-img{
-        width: 70%;
-        margin: 2rem 0;
-    }
-}
-
-@media screen and (min-width: 300px) and (max-width: 767px){
-    .about-us .grid-two-col:nth-child(2) .about-us__description{
-        order: 1;
-    }
-
-    .about-u .grid-two-col:last-child{
-        border-bottom: none;
     }
 }

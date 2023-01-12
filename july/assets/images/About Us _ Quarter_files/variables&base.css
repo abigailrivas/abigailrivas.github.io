@@ -90,10 +90,6 @@ ul{
     list-style: none;
 }
 
-li{
-    list-style: none;
-}
-
 /*============ HEADER ============*/
 .header{
     position: fixed;
@@ -173,10 +169,6 @@ li{
 
 #fixed-cta-menu{
     border-top: none;
-}
-
-.ham-menu, .ham-menu__nav{
-    display: none;
 }
 
 /*============ BUTTONS ============*/ 
@@ -359,66 +351,9 @@ li{
 
 
 @media screen and (min-width: 300px) and (max-width: 767px) {
-    .header{
-        height: 12%;
-    }
-
-    .fixed-header, .non-home-header{
-        border-right: 1px solid var(--color--brand--second--dark);
-    }
-
-    .header-content{
+    header{
         display: none;
     }
-
-    .ham-menu{
-        display: flex;
-        column-gap: 1rem;
-        justify-content: end;
-        padding-top: 0.8rem;
-        align-items: center;
-        padding-right: 2rem;
-    }
-
-    .ham-menu i{
-        font-size: 1.3rem;
-    }
-
-    .ham-menu__nav{
-        padding: 2rem;
-        position: fixed;
-        background-color: var(--color--brand--third);
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    /* TODO: NO SALE EL HAMBURG EN ABOUTUS */
-    .ham-menu__nav ul{
-        display: flex;
-        position: fixed;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        flex-direction: column;
-        align-items: center;
-        row-gap: 2rem;
-    }
-
-    .ri-close-fill{
-        position: fixed;
-        right: 2rem;
-        top: 2rem;
-        font-size: 2rem;
-    }
-
-    .logo--header{
-        position: absolute;
-        left: 1rem;
-        top: 1rem;
-    }
-    
 
     .shop__product{
         width: 100%;

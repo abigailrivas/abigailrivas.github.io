@@ -20,34 +20,62 @@
 <body>
     <!--============== HEADER ==============-->
     <header class="header non-home-header" id="header">
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/merch.html">Merch</a>
-                </li>
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
-                </li>
-            </ul>
-
-            <div class="nav__menu">
+        <div class="header-content">
+            <nav class="nav">
                 <ul class="nav__menu">
                     <li class="nav__menu__item">
-                        <a href="/quarter/about-us_page/about-us.html">About us</a>
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="">
-                            <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
-                            <div class="count" id="counter">3</div>
-                        </a>
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
                     </li>
                 </ul>
-                <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
-            </div>
-        </nav>
+    
+                <div class="nav__menu">
+                    <ul class="nav__menu">
+                        <li class="nav__menu__item">
+                            <a href="/quarter/about-us_page/about-us.html">About us</a>
+                        </li>
+                        <li class="nav__menu__item">
+                            <a href="">
+                                <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                                <div class="count" id="counter">3</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
+                </div>
+            </nav>
+        </div>
         <a href="/quarter/main_page/index.html">
             <img src="/quarter/main_page/assets/images/quarter-logo.svg" alt="logo" class="logo--header logo--header-fixed" id="logoHeader">
         </a>
+
+        <!-- ========== HAMBURGUER MENU =========== -->
+        <div class="ham-menu" id="HamMenu">
+            <li class="nav__menu__item">
+                <a href="">
+                    <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                    <div class="count" id="counter">3</div>
+                </a>
+            </li>
+            <i class="ri-menu-line" id="hamMenuIcon"></i>
+
+            <div class="ham-menu__nav" id="hamMenuNav">
+                <ul>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/about-us_page/about-us.html">About us</a>
+                    </li>
+                </ul>
+                <i class="ri-close-fill" id="closeMenu"></i>
+            </div>
+        </div>
     </header>
     <main class="main">
         <section class="merch">

@@ -37,9 +37,12 @@
 }
 
 /*============ HOME ============*/
+.home{
+    padding-top: 3.5em;
+}
 
 .home__logo{
-    padding: 5rem 2rem 3rem;
+    display: none;
 }
 
 .home__content{
@@ -370,6 +373,7 @@
         grid-template-columns: repeat(2,1fr);
         gap: 3rem;
     }
+
     .shop{
         flex-direction: column;
         padding-bottom: 0;
@@ -396,15 +400,44 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width: 2500px){
+    .adult-verification{
+        padding: 3rem;
+        height: 430px;
+        width: 500px;
+    }
+
     .home__logo{
         margin-top: 3rem;
         padding: 1rem;
         width: 90%;
     }
 
+    .home__info__subtitle{
+        font-size: 3rem;
+    }
+
+    .home__info__text{
+        font-size: 1.3rem;
+    }
+
+    .product__image{
+        width: 250px;
+        height: 250px;
+    }
+
+    .shop__title, .spotify__description__title{
+        font-size: 3.5rem;
+    }
+
+    .spotify{
+        height: 700px;
+    }
+
     .spotify__playlist__link{
         position: absolute;
-        left: 30%;
-        margin-top: 3rem;
+        left: 10%;
+        margin-top: 4rem;
+        width: 80%;
+        height: 80%;
     }
 }

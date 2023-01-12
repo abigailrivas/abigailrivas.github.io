@@ -2,7 +2,6 @@
 
 .top-merch-container{
     display: flex;
-    flex-direction: row;
     column-gap: 1.5rem;
     margin: 4rem 2rem 0;
 }
@@ -48,4 +47,14 @@
 
 .shop__product__content{
     margin-bottom: -1rem;
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    .top-merch-container{
+        flex-direction: column;
+        row-gap: 2rem;
+
+        /* TODO: ARREGLAR HEADER QUE SOBRESALE */
+    }
 }
