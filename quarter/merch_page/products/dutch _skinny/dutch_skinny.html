@@ -21,37 +21,65 @@
 <body>
     <!--============== HEADER ==============-->
     <header class="header non-home-header" id="header">
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/merch.html">Merch</a>
-                </li>
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
-                </li>
-            </ul>
-
-            <div class="nav__menu">
+        <div class="header-content">
+            <nav class="nav">
                 <ul class="nav__menu">
                     <li class="nav__menu__item">
-                        <a href="/quarter/about-us_page/about-us.html">About us</a>
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
                     </li>
                     <li class="nav__menu__item">
-                        <a href="">
-                            <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
-                            <div class="count" id="counter">3</div>
-                        </a>
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
                     </li>
                 </ul>
-                <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
-            </div>
-        </nav>
+    
+                <div class="nav__menu">
+                    <ul class="nav__menu">
+                        <li class="nav__menu__item">
+                            <a href="/quarter/about-us_page/about-us.html">About us</a>
+                        </li>
+                        <li class="nav__menu__item">
+                            <a href="">
+                                <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                                <div class="count" id="counter">3</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
+                </div>
+            </nav>
+        </div>
         <a href="/quarter/main_page/index.html">
             <img src="/quarter/main_page/assets/images/quarter-logo.svg" alt="logo" class="logo--header logo--header-fixed" id="logoHeader">
         </a>
+
+        <!-- ========== HAMBURGUER MENU =========== -->
+        <div class="ham-menu" id="HamMenu">
+            <li class="nav__menu__item">
+                <a href="">
+                    <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                    <div class="count" id="counter">3</div>
+                </a>
+            </li>
+            <i class="ri-menu-line" id="hamMenuIcon"></i>
+
+            <div class="ham-menu__nav" id="hamMenuNav">
+                <ul>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/about-us_page/about-us.html">About us</a>
+                    </li>
+                </ul>
+                <i class="ri-close-fill" id="closeMenu"></i>
+            </div>
+        </div>
     </header>
     <main class="main">
-        <section class="quarter">
+        <section class="product-view">
             <div class="slideshow-container">
                 <div class="slide">
                     <img src="/quarter/merch_page/assets/images/merch_double_dutch_skinny.PNG" alt="double dutch skinny">
@@ -73,9 +101,9 @@
                 </div>
             </div>
 
-            <div class="quarter__description">
+            <div class="product__description">
                 <h1>Double Dutch Skinny Tonic Water</h1>
-                <div class="quarter__description-subtitle">
+                <div class="product__description-subtitle">
                     <p><em>6 x 150ml</em></p>
                 </div>
                 <div class="line"></div>
@@ -92,7 +120,7 @@
                         <p>Sold Out</p>
                     </a>
                 </div>
-                <p class="quarter--text">
+                <p class="product--text">
                     We’ve partnered with our friends at Double Dutch as we think their tonic is the bee’s knees. This skinny version of their classic has less sugar but just as much taste. GUARANTEED!
                 </p>
             </div>
@@ -201,7 +229,7 @@
             </div>
         </section>
     </footer>
-    <script src="/quarter/quarter/main_page/assets/js/main.js"></script>
+    <script src="/quarter/main_page/assets/js/main.js"></script>
     <script src="/quarter/merch_page/products/quarter/assets/js/quarter.js"></script>
 </body>
 </html>

@@ -42,7 +42,8 @@
 }
 
 .home__logo{
-    display: none;
+    display: flex;
+    padding: 2rem;
 }
 
 .home__content{
@@ -304,8 +305,7 @@
     }
 
     .home__logo{
-        padding: 1rem;
-        width: 70%;
+        padding: 3rem 2rem 1rem;
     }
 
     .home__content{
@@ -367,6 +367,10 @@
         left: 30%;
     }
 
+    .home__logo{
+        display: none;
+    }
+    
     .product{
         padding: 4rem 0;
         display: grid;

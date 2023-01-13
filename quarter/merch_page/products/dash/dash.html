@@ -21,37 +21,65 @@
 <body>
     <!--============== HEADER ==============-->
     <header class="header non-home-header" id="header">
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/merch.html">Merch</a>
-                </li>
-                <li class="nav__menu__item">
-                    <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
-                </li>
-            </ul>
-
-            <div class="nav__menu">
+        <div class="header-content">
+            <nav class="nav">
                 <ul class="nav__menu">
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
+                    </li>
+                </ul>
+    
+                <div class="nav__menu">
+                    <ul class="nav__menu">
+                        <li class="nav__menu__item">
+                            <a href="/quarter/about-us_page/about-us.html">About us</a>
+                        </li>
+                        <li class="nav__menu__item">
+                            <a href="">
+                                <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                                <div class="count" id="counter">3</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
+                </div>
+            </nav>
+        </div>
+        <a href="/quarter/main_page/index.html">
+            <img src="/quarter/main_page/assets/images/quarter-logo.svg" alt="logo" class="logo--header logo--header-fixed" id="logoHeader">
+        </a>
+
+        <!-- ========== HAMBURGUER MENU =========== -->
+        <div class="ham-menu" id="HamMenu">
+            <li class="nav__menu__item">
+                <a href="">
+                    <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
+                    <div class="count" id="counter">3</div>
+                </a>
+            </li>
+            <i class="ri-menu-line" id="hamMenuIcon"></i>
+
+            <div class="ham-menu__nav" id="hamMenuNav">
+                <ul>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/merch.html">Merch</a>
+                    </li>
+                    <li class="nav__menu__item">
+                        <a href="/quarter/merch_page/products/quarter/quarter.html">Gin</a>
+                    </li>
                     <li class="nav__menu__item">
                         <a href="/quarter/about-us_page/about-us.html">About us</a>
                     </li>
-                    <li class="nav__menu__item">
-                        <a href="">
-                            <img src="/quarter/main_page/assets/images/shopping-bag (1).png" alt="" class="cart__icon">
-                            <div class="count" id="counter">3</div>
-                        </a>
-                    </li>
                 </ul>
-                <a href="" class="cta" id="fixed-cta-menu">get 10% off</a>
+                <i class="ri-close-fill" id="closeMenu"></i>
             </div>
-        </nav>
-        <a href="/quarter/main_page/index.html">
-            <img src="/main_page/assets/images/quarter-logo.svg" alt="logo" class="logo--header logo--header-fixed" id="logoHeader">
-        </a>
+        </div>
     </header>
     <main class="main">
-        <section class="quarter">
+        <section class="product-view">
             <div class="slideshow-container">
                 <div class="slide">
                     <img src="/quarter/merch_page/assets/images/merch_dash.PNG" alt="dash">
@@ -69,9 +97,9 @@
                 </div>
             </div>
 
-            <div class="quarter__description">
+            <div class="product__description">
                 <h1>Dash Bitter Orange & Grapefruit</h1>
-                <div class="quarter__description-subtitle">
+                <div class="product__description-subtitle">
                     <p><em>6 x 200ml</em></p>
                 </div>
                 <div class="line"></div>
@@ -90,7 +118,7 @@
                         <i class="ri-arrow-right-up-line btn--icon__arrow"></i>
                     </a>
                 </div>
-                <p class="quarter--text">
+                <p class="product--text">
                     We’ve partnered with the guys at Dash, as not only do we think their products are awesome, but we think Gin & Soda is a game changer! It’s as if Dash made this flavour for us, the orange and grapefruit is a perfect compliment to our gin profile.
                 </p>
             </div>
@@ -199,7 +227,7 @@
             </div>
         </section>
     </footer>
-    <script src="/quarter/quarter/main_page/assets/js/main.js"></script>
+    <script src="/quarter/main_page/assets/js/main.js"></script>
     <script src="/quarter/merch_page/products/dash/js/dash.js"></script>
 
 </body>
