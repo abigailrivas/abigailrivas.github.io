@@ -1,5 +1,3 @@
-@import url("variables&base.css");
-
 /* ============ PROMOTIONAL BAR ============= */
 
 .promotional-bar{
@@ -27,15 +25,18 @@
 .home__data{
     display: flex;
     flex-direction: column;
+    row-gap: 1rem;
     width: 50%;
     margin: auto;
     align-items: center;
 }
 
 .home__subtitle{
+    width: 350px;
     color: white;
     text-align: center;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .blink{
@@ -90,16 +91,17 @@ video{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 1rem;
+    row-gap: 2rem;
     text-align: center;
     color: var(--secondary-color);
 }
 
-.feedback-text{
-    font-size: 1.4rem;
+.feedback__text{
+    width: 400px;
+    font-size: 1.3rem;
 }
 
-.feedback-logo{
+.feedback__logo{
     width: 300px;
     object-fit: contain;
 }
@@ -148,19 +150,18 @@ video{
 
 /* ========= COLOR CHOICES ======== */
 
-.color-choices{
-    background-color: white;
-    padding-top: 0rem;
-    padding-bottom: 4rem;
-    max-width: 100%; 
-    margin-right: auto;
-    margin-left: auto;
+.color-choices__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding: 2rem;
 }
 
-.color-choices-title{
-    font-size: 2.5rem;
+.color-choices__container h1{
     color: black;
-    padding-bottom: 1rem;
+    width: 700px;
 }
 
 .guarantee{
@@ -169,15 +170,30 @@ video{
     font-size: 1.2rem;
 }
 
-.color-choices-text{
-    text-align: center;
-    color: black;   
+.guarantee::after{
+    content: "";
+    background-image: url("/july/assets/images/wave-underline.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    filter: invert();
+}
+
+/* TODO: UNDERLINE */
+
+.color-choices-carrousel{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
 }
 
 .air-conditioner{
     display: flex;
     justify-content: center;
-    padding-top: 2rem;
 }
 
 .color-choices-button{
