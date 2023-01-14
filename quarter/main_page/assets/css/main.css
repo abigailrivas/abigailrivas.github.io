@@ -105,7 +105,7 @@
     justify-content: space-evenly;
 }
 
-.product__description{
+.product__info{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;

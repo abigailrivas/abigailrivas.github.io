@@ -170,37 +170,12 @@ video{
     font-size: 1.2rem;
 }
 
-.guarantee::after{
-    content: "";
-    background-image: url("/july/assets/images/wave-underline.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    height: 10px;
-    position: absolute;
-    top: 2rem;
-    left: 0;
-    filter: invert();
-}
-
-/* TODO: UNDERLINE */
-
 .color-choices-carrousel{
     display: flex;
     justify-content: center;
     padding-top: 2rem;
 }
 
-.air-conditioner{
-    display: flex;
-    justify-content: center;
-}
-
-.color-choices-button{
-    display: flex;
-    justify-content: center;
-    padding-top: 2rem;  
-}
 /* ========= SPOTIFY ======== */
 
 
