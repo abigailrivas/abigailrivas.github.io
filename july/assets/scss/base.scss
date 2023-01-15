@@ -1,6 +1,25 @@
-// Include any default variable overrides here (though functions won't be available)
+@import "/july/assets/css/variables&base.css";
+
+// TYPOGRAPHY
+$headings-font-family: WT Monarch Nova;
+$bs-font-sans-serif:  Roobert-regular;
 
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+// ACCORDIONS
+$accordion-border-width: 1px;
+$accordion-inner-border-radius: 1rem; 
+$accordion-border-radius: 1rem; 
 
+$accordion-button-active-bg: #b1def1;
+$accordion-button-active-color: black;
+
+$accordion-button-focus-border-color: white;
+$accordion-button-focus-box-shadow:  none;
+
+// MODALS
+$modal-backdrop-bg: rgba(255,255,255,0.8);
+$modal-content-border-width: 0px;
+$modal-header-border-width:  0px;
+
+@import "C:/Users/UserW10/Documents/GitHub/abigailrivas.github.io/july/node_modules/bootstrap/scss/bootstrap.scss";
 // Then add additional custom code here

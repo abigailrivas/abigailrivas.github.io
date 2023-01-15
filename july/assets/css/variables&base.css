@@ -11,6 +11,7 @@
     /* ========= COLORS ======== */
     --accent-color: #FFD600;
     --secondary-color: #5ab9e1;
+    --secondary-color-light: #b6e1f3;
     --btn-box-shadow: #fcd23a;
 
     /* ========= FONTS ======== */
@@ -56,6 +57,7 @@ h4{
 
 p{
     font-size: 1rem;
+    margin-bottom: 0;
 }
 
 a{
@@ -69,6 +71,10 @@ ul{
 
 ::-webkit-scrollbar{
     display: none;
+}
+
+::selection{
+    background-color: var(--secondary-color);
 }
 
 /* ========= HEADER ======== */
@@ -116,8 +122,12 @@ header{
 }
 
 .nav__link:hover{
-    transition: color 0.5s;
+    transition: color 0.3s;
     color: var(--accent-color);
+}
+
+.nav__link:hover .cart .cart-items{
+    border-color: var(--accent-color);
 }
 
 .nav__link--active::after{
@@ -150,6 +160,42 @@ header{
     display: none;
 }
 
+.dropdown-menu{
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    background-color: white;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    width: 170px;
+    border: none;
+    border-radius: 1rem;
+}
+
+.dropdown-menu li:first-child {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    position: relative;
+}
+
+.dropdown-menu li:first-child::after{
+    content: "";
+    background-image: url(https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/july-ac-menu-shape.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0.3rem;
+}
+
+.dropdown-menu li{
+    padding: 0.7rem 1rem;
+}
+
+.dropdown-menu li a:hover{
+    transition: color 0.3s;
+    color: var(--accent-color);
+}
+
 
 /* ========= BUTTONS ======== */
 .cta{
@@ -168,4 +214,223 @@ header{
 .btn-text{
     color: black;
     margin-bottom: 0;
+}
+
+.btn-secondary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 3px solid var(--accent-color);
+    border-radius: 2rem;
+    width: 250px;
+    padding: 1rem;
+    height: 3.5rem;
+    color: black;
+}
+
+.btn-disabled{
+    opacity: .75;
+}
+
+
+/* ========= CONFIGURE JULY ======== */
+.configure-july{
+    padding-top: 12%;
+}
+
+.product-form{
+    padding: 3rem;
+}
+
+.payment-line{
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.payment-line img{
+    margin-top: -0.4rem;
+    width: 45px;
+    height: 18px;
+}
+
+.payment-line .affirm-modal-btn{
+    margin-left: 1rem;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+/* AFFIRM  */
+.affirm-modal-btn:hover{
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.affirm-popup__img{
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+}
+
+.affirm-popup__title{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.affirm-popup__small-text{
+    margin-top: 2rem;
+    font-size: 0.7rem;
+}
+
+/* ========= FOOTER ======== */
+.footer{
+    background-image: url(https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/pattern-01.jpg);
+    background-repeat: repeat-x;
+    background-position: left top;
+    background-size: contain;
+    margin: 1rem;
+    padding: 3rem 0;
+    border-radius: 1rem;
+}
+
+.footer__insta-feed{
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes rotate{
+    from {
+        transform:rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.footer-logo-col{
+    position: relative;
+}
+
+.footer-logo-col::before{
+    content: "";
+    background: url(https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/sticker_logo01.png) no-repeat;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 220px;
+}
+
+.footer-logo-col img{
+    padding: 1rem;
+    width: 100px;
+}
+
+.footer-logo-col img:first-child{
+    width: 200px;
+    position: absolute;
+    z-index: 0;
+    animation: rotate 6s infinite linear;
+}
+
+.footer-logo-col img:nth-child(2){
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    z-index: 100;
+}
+
+.footer-cols{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.footer-list__header{
+    font-family: var(--font-regular);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-list ul{
+    padding-left: 0;
+}
+
+.footer-list ul li{
+    padding: 0.4rem 0;
+}
+
+.footer-newsletter{
+    padding-left: 3rem;
+}
+
+.footer-newsletter p:nth-child(2){
+    margin-top: 1rem;
+}
+
+.form-newsletter{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.carbon-free-logo__container{
+    display: flex;
+    justify-content: center;
+}
+
+.carbon-free-logo__container img{
+    width: 100px;
+}
+
+.app__container{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.list-inline{
+    margin-top: 0.8rem;
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+}
+
+.footer-small-menu ul li a, .footer-small-menu span{
+    color: rgb(33, 31, 31);
+}
+
+.footer-small-menu span{
+    display: flex;
+    justify-content: center;
+}
+
+/* ========= FORMS ======== */
+input{
+    margin-top: 1rem;
+    border: 1px solid white;
+    padding: 1rem;
+    background-color:transparent;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+input:focus{
+    border: 1px solid #309ac7;
+}
+
+button[type="submit"]{
+    padding: 1rem;
+    background-color: var(--secondary-color-light);
+    border-radius: 0.5rem;
+    border: none;
 }

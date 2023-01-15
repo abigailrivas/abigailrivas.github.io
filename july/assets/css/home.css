@@ -31,21 +31,25 @@
     align-items: center;
 }
 
+.home__title{
+    position: relative;
+}
+
+.blink{
+    margin-top: -2rem;
+    margin-left: -3.5rem;
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    background-size: contain;
+}
+
 .home__subtitle{
     width: 350px;
     color: white;
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-}
-
-.blink{
-    margin-top: -2rem;
-    margin-left: -0.8rem;
-    width: 6rem;
-    height: 6rem;
-    position: absolute;
-    background-size: contain;
 }
 
 .home__img{
@@ -117,17 +121,12 @@ video{
     margin: 0 3rem 6rem;
 }
 
-.feature-list{
-    display: flex;
-    padding: 0rem 0rem;
-}
-
 .feature-image{
     width: 50%;
 }
 
 .feature-photo{
-    width: 90%;
+    width: 100%;
 }
 
 .feature__data{
@@ -138,6 +137,7 @@ video{
     row-gap: 2rem;
     justify-content: center;
 }
+
 .feature__title{
     color: black;
     text-align: start;
@@ -147,7 +147,10 @@ video{
     color: black;
 }
 
-
+/* ========= CONFIGURE JULY ======== */
+.img-product-container{
+    padding: 3rem;
+}
 /* ========= COLOR CHOICES ======== */
 
 .color-choices__container{
@@ -157,6 +160,7 @@ video{
     flex-direction: column;
     row-gap: 1.5rem;
     padding: 2rem;
+    position: relative;
 }
 
 .color-choices__container h1{
@@ -176,9 +180,18 @@ video{
     padding-top: 2rem;
 }
 
+.color-choices__container::after{
+    content: "";
+    position: absolute;
+    bottom: -8rem;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url(https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/border-04.svg);
+    background-repeat: repeat-x;
+}
+
 /* ========= SPOTIFY ======== */
-
-
 .blink2{
     margin-top: -2.5rem;
     margin-left: 0.3rem;
@@ -189,6 +202,7 @@ video{
 }
 
 .spotify{
+    margin-top: 8rem;
     position: relative;
     padding-top: 5rem;
     padding-bottom: 4rem;
@@ -198,45 +212,33 @@ video{
     margin-left: 3rem;
 }
 
-
 .playlist{
-    position: relative;
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     padding: 2rem 2rem;
-    max-width: 44rem;
+    max-width: 50%;
     background-color: #1db954;
     border-radius: 1rem;
     margin: auto;
     margin-top: 2rem;
 }
+
 .spotify-logo{
     width: 10rem;
 }
+
 .spotify-text{
     color: black;
     font-size: 1.1rem;
     line-height: 1.4rem;
+    margin-bottom: 1.5rem;
 }
 
 .spotify-link{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.spotify__button{
-    margin-top: 1rem;
-    cursor: pointer;
-    background-color: #FFD600;
-    border-radius: 2rem;
-    box-shadow: 0 0 60px #fcd23a;
-}
-
-.spotify__button-text{
-    text-align: center;
 }
 
 
@@ -258,31 +260,18 @@ video{
     row-gap: 2.5rem;
     align-items: center;
 }
+
 .about__title{
     color:#5ab9e1;
+}
+
+.about-img{
+    animation: rotate 6s infinite linear;
 }
 
 .button__secondary{
     border-radius: 2rem;
     border: 2px solid #FFD600;
-}
-
-
-/* ========= FOOTER ======== */
-
-.footer{
-    background-color: #5ab9e1;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
-    max-width: 100%; 
-    margin-right: auto;
-    margin-left: auto;
-
-}
-
-.footer__insta{
-    display: flex;
-    justify-content: center;
 }
 
 

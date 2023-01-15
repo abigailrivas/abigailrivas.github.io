@@ -11,12 +11,11 @@
         href="//cdn.shopify.com/s/files/1/0248/0481/9023/files/favicon_41425073-15b4-4688-9be5-b301259743d1_32x32.png?v=1587741198"
         type="image/x-icon">
 
-    <!--======== CSS =========-->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/july/bootstrap/scss/bootstrap.scss">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <!-- <link rel="stylesheet" href="/july/assets/scss/custom.scss" class="scss"> -->
+    <!--======== BOOTSTRAP =========-->
+    <link rel="stylesheet" href="/july/assets/scss/base.css">
+    <script src="/july/assets/js/bootstrap.bundle.min.js"></script>
 
+    <!--======== CSS =========-->
 
     <link rel="stylesheet" href="/july/assets/css/variables&base.css">
     <link rel="stylesheet" href="/july/assets/css/home.css">
@@ -56,7 +55,12 @@
         </div>
         <nav>
             <ul class="nav__menu">
-                <li><a href="/july/views/shop-july.html" class="nav__link">Shop July</a></li>
+                <li>
+                    <a href="#nav__menu" class="nav__link" id="has-dropdown">Shop July</a>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="/july/views/window-ac.html">July A/C</a></li>
+                        <li><a href="/july/views/accesories/accesories.html">Accesories</a></li>
+                    </ul>
                 <li><a href="#refer-a-friend" class="nav__link" onclick="showReferAfriend()">Refer a Friend</a></li>
                 <li><a href="/july/views/about-us.html" class="nav__link">About</a></li>
                 <li><a href="/july/views/reviews.html" class="nav__link">Reviews</a></li>
@@ -72,7 +76,15 @@
 
         <div class="ham-menu">
             <ul class="nav__menu">
-                <li><a href="/july/views/shop-july.html" class="nav__link">Shop July</a></li>
+                <li>
+                    <a href="/july/views/shop-july.html" class="nav__link">
+                        Shop july
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">July A/C</a></li>
+                        <li><a class="dropdown-item" href="#">Accesories</a></li>
+                    </ul>
+                </li>
                 <li><a href="#refer-a-friend" class="nav__link" onclick="showReferAfriend()">Refer a Friend</a></li>
                 <li><a href="/july/views/about-us.html" class="nav__link">About</a></li>
                 <li><a href="/july/views/reviews.html" class="nav__link">Reviews</a></li>
@@ -91,8 +103,9 @@
         <!--======== HOME =========-->
         <section class="home">
             <div class="home__data">
-                <h1 class="home__title">Your <br>window's <br> coolest <br> frien<span><img class="blink"
-                            src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/blink-animated.gif">d</span>
+                <h1 class="home__title">Your <br>window's <br> coolest <br> frien<span>d</span>
+                    <img class="blink"
+                        src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/blink-animated.gif">
                 </h1>
                 <p class="home__subtitle">A stylish, sustainable, easy to install air conditioner for your summer days.
                 </p>
@@ -139,90 +152,88 @@
 
         <!--======== FEATURE =========-->
         <section class="feature">
-            <div class="feature-list">
-                <div class="feature-image">
-                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/home-value-prop-1.png?v=1652861850"
-                        class="feature-photo" alt="">
-                </div>
+            <div class="feature-image">
+                <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/home-value-prop-1.png?v=1652861850"
+                    class="feature-photo" alt="">
+            </div>
 
-                <div class="feature__data">
-                    <h3 class="feature__title">July is easier</h3>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <span>Quick installation</span>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Our patented installation frame makes it safer, easier, and quicker to install July
-                                    than any other window A/C before.
-                                </div>
+            <div class="feature__data">
+                <h3 class="feature__title">July is easier</h3>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <span class="fs-4">Quick installation</span>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Our patented installation frame makes it safer, easier, and quicker to install July
+                                than any other window A/C before.
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    WIFI-enabled and smart
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    July is a truly modern window A/C unit. Control July with the iOS and Android apps,
-                                    or use your voice with Amazon Alexa and Google Home.
-                                </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="fs-4">WIFI-enabled and smart</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                July is a truly modern window A/C unit. Control July with the iOS and Android apps,
+                                or use your voice with Amazon Alexa and Google Home.
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Get July installed by our pros
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Choose our white-glove service and have your July installed nationwide, powered by
-                                    Handy.
-                                </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="fs-4">Get July installed by our pros</span>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Choose our white-glove service and have your July installed nationwide, powered by
+                                Handy.
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Accessorize like never before
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    July is the most customizable window A/Cc ever. Choose from our range of advanced
-                                    filters, upgraded side panels, and more to make your experience with July even
-                                    sweeter.
-                                </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span class="fs-4">Accessorize like never before</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                July is the most customizable window A/Cc ever. Choose from our range of advanced
+                                filters, upgraded side panels, and more to make your experience with July even
+                                sweeter.
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    Kinder to the enviroment
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    2/3rds less emissions and 10% less energy used when compared to many traditional
-                                    window A/Cs of the same size. Plus, we'll offset the carbon emissions from every A/C
-                                    we sell for one year at no cost to you.
-                                </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span class="fs-4">Kinder to the enviroment</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                2/3rds less emissions and 10% less energy used when compared to many traditional
+                                window A/Cs of the same size. Plus, we'll offset the carbon emissions from every A/C
+                                we sell for one year at no cost to you.
                             </div>
                         </div>
                     </div>
@@ -230,7 +241,7 @@
             </div>
         </section>
 
-        <section class="color-choices__container">
+        <section class="color-choices__container container-fluid">
             <h1>Match July to your style</h1>
             <h4>2 sizes. 3 materials. 7 colors. Starts at $399</h4>
             <a href="" class="guarantee">30-Day Trial | 1-Year Warranty | Easy Returns</a>
@@ -241,8 +252,89 @@
             <a class="cta" href="/july/views/shop-july.html">
                 <p>See all the options</p>
             </a>
-            <div class="color-choices-button">
+        </section>
+
+        <section class="container- configure-july">
+            <div class="row">
+                <div class="col-12">
+                    <h3 style="color: black;">CONFIGURE YOUR JULY</h3>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-6 img-product-container">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/home-configure-white_608x.png?v=107234639250218216081652862550"
+                        alt="air aconditioner example">
+                </div>
+                <div class="col-6">
+                    <form class="product-form" action="/card/add" method="post">
+                        <div class="payment-line">
+                            <div class="price">
+                                <strong>
+                                    <span class="price-options">$399</span>
+                                </strong>
+                                <strong>|</strong>
+                            </div>
+                            <em>
+                                Or 4 interest-free payments of
+                                <span class="price-four-payments">$100</span>
+                                with
+                            </em>
+                            <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-logo-dark.png?v=26600183519341656981652868947"
+                                alt="">
+                            <a href="#affirm-popup" class="affirm-modal-btn" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">?</a>
+                        </div>
+                        <div class="modal fade affirm-pop-up" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div style="display: flex;">
+                                            <div>
+                                                <img class="affirm-popup__img"
+                                                    src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-modal-image.png?v=13917431263619600331652868954"
+                                                    alt="">
+                                            </div>
+                                            <div class="">
+                                                <h1 class="modal-title fs-2 affirm-popup__title" style="color:black;"
+                                                    id="exampleModalLabel">BUY NOW, <br> PAY OVER TIME</h1>
+                                                <div class="logos-container">
+                                                </div>
+                                                <p>
+                                                    July has partnered with Shop Pay by Affirm to offer our customers
+                                                    the option of paying for their purchase in 4 interest-free
+                                                    installments. It’s that simple.
+
+                                                    <br><br>
+
+                                                    During the checkout flow, select “Shop Pay Installments” to see if
+                                                    you qualify.
+                                                </p>
+                                                <p class="affirm-popup__small-text">
+                                                    The estimated payment amount excludes taxes and shipping. Payment
+                                                    options are offered by Affirm and are subject to eligibility check
+                                                    and might not be available in all states. California residents:
+                                                    Affirm Loan Services, LLC is licensed by the Department of Business
+                                                    Oversight. Loans are made or arranged pursuant to California
+                                                    Financing Law license.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="window-type-selction">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
         </section>
 
         <section class="spotify">
@@ -257,8 +349,8 @@
                     <div class="spotify-link">
                         <p class="spotify-text">The only reason to sweat now is for <br> dancing all the best party
                             songs <br> in this playlist!</p>
-                        <a class="spotify__button button-text" href="">
-                            <p class="spotify__button-text" id="bttn-text">Go to playlist</p>
+                        <a class="cta" href="https://open.spotify.com/user/wp6vvfp223ovocqa9ootyrwqa">
+                            <p class="btn-text">Go to playlist</p>
                         </a>
                     </div>
                 </div>
@@ -271,18 +363,117 @@
 
         <section class="section__about">
             <div class="about">
-                <img src="https://cdn.shopify.com/s/files/1/0348/3267/9044/files/flower.png?v=1647418947" alt=""
-                    class="about__img">
+                <img  class="about-img" src="https://cdn.shopify.com/s/files/1/0348/3267/9044/files/flower.png?v=1647418947" alt="">
                 <h3 class="about__title">July was born on a hot<br>summer's day</h3>
-                <a href="" class="button__secondary">
-                    <p class="button-text" id="bttn-text">I want the full story</p>
+                <a href="/july/views/about-us.html" class="btn-secondary">
+                    <p class="btn-text">I want the full story</p>
                 </a>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__insta">
-            <img src="assets/images/insta.svg" alt="">
+    <footer class="row">
+        <div class="col-12">
+            <div class="footer">
+                <div class="footer__insta-feed">
+                    <a href="https://www.instagram.com/feelslike.july/" target="_blank">
+                        <img src="/july/assets/images/insta.svg" alt="">
+                    </a>
+                </div>
+                <div class="row m-5">
+                    <div class="col-3 footer-logo-col">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/july-ac-menu-shape.svg" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/july-logo-footer_103x57.png?v=1624963170" alt="">
+                    </div>
+                    <div class="col-5">
+                        <div class="footer-cols">
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Shop</h4>
+                                <ul>
+                                    <li><a href="/july/views/window-ac.html">Air Conditioner</a></li>
+                                    <li><a href="/july/views/accesories/air-purifying-sky-filters.html">Air Filters</a></li>
+                                    <li><a href="/july/views/accesories/plexiglass-kit.html">Plexiglass kit</a></li>
+                                    <li><a href="/july/views/accesories/accesories.html">All accesories</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Company</h4>
+                                <ul>
+                                    <li><a href="/july/views/about-us.html">About</a></li>
+                                    <li><a href="#footer">Help</a></li>
+                                    <li><a href="/july/views/reviews.html">Reviews</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Social</h4>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.instagram.com/feelslike.july/" target="_blank">
+                                            Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/feelslikejuly" target="_blank">
+                                            Facebook
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/feelslike_july" target="_blank">
+                                            Twitter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://open.spotify.com/user/wp6vvfp223ovocqa9ootyrwqa" target="_blank">
+                                            Spotify
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 footer-newsletter">
+                        <p class="fs-5">Our emails are a tall drink of water.</p>
+                        <p>Special offers, new product launches and more from July. No spam. We promise.</p>
+                        <form action="" method="post" class="form-newsletter">
+                            <input type="email" placeholder="Enter you email" name="email" id="email">
+                            <button class="submit" type="submit">Subscribe me</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 carbon-free-logo__container">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/carbon-free-logo.png?v=22099762200256831121652440728" alt="">
+                    </div>
+                    <div class="col-4 app__container">
+                        <p class="fs-5">Get the July App</p>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://apps.apple.com/us/app/july-a-c/id1525603976">
+                                    <svg width="22" height="26" viewBox="0 0 25 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24.9712 21.8097C24.9666 21.7771 24.96 21.7472 24.96 21.7167V21.1832L24.691 21.0293C22.4524 19.7501 21.3643 17.9059 21.3643 15.3921C21.3643 13.2792 22.2301 11.4676 23.8024 10.2869L24.4205 9.95953L24.0156 9.43034C22.966 8.05924 21.2593 6.23677 18.565 6.23677C18.063 6.23677 17.5987 6.36622 17.1424 6.55276C18.2386 5.27303 18.8324 3.65236 18.8324 1.7918C18.8324 1.50244 18.8005 1.16798 18.7634 0.781323L18.7512 0.655142C18.7487 0.629046 18.7441 0.60295 18.7385 0.577399L18.6994 0.410954C18.6659 0.269576 18.5811 0.148239 18.4639 0.0748553C18.3456 0.000866297 18.2066 -0.0192355 18.0746 0.0188489C15.391 0.795491 12.5236 3.06886 12.5236 7.11791C12.5236 7.33437 12.5434 7.58564 12.5728 7.84939C12.1282 7.72539 11.7395 7.49046 11.3117 7.22775C10.6169 6.80246 9.82977 6.31947 8.6864 6.31947C3.56724 6.31947 0 11.2985 0 15.7675C0 18.2247 0.720646 22.4815 2.74964 26.3908C4.29551 29.4065 6.1301 31 8.05508 31C8.76205 31 9.47608 30.7101 10.2318 30.4034C11.0707 30.0624 11.938 29.7105 12.8759 29.7105C13.6407 29.7105 14.4222 30.0025 15.1779 30.2848C15.9553 30.5757 16.7597 30.8765 17.5773 30.8765C21.6028 30.8765 25 25.508 25 22.1366C25.0001 22.0137 24.9859 21.9077 24.9712 21.8097Z" fill="#171717"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://play.google.com/store/apps/details?id=com.july.android">
+                                    <svg width="21" height="26" viewBox="0 0 27 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4.07217 0.39507C3.28461 -0.0856766 2.34598 -0.128665 1.52736 0.271553L15.2527 14.2193L19.7405 9.64733L4.07217 0.39507ZM0.266303 1.56243C0.0931464 1.93419 0 2.34773 0 2.77338V28.2869C0 28.7143 0.0937436 29.1218 0.268692 29.4857L13.9887 15.5071L0.266303 1.56243ZM15.2546 16.7931L1.55131 30.7548C1.91494 30.9255 2.30185 31 2.68817 31C3.16525 31 3.64113 30.8844 4.07223 30.6216L19.7435 21.3554L15.2546 16.7931ZM25.7079 13.1712C25.7025 13.1676 25.6965 13.1639 25.6912 13.1609L21.3408 10.5919L16.518 15.5053L21.3437 20.409C21.3437 20.409 25.7025 17.8321 25.7079 17.8291C26.517 17.3308 27 16.4601 27 15.4998C27 14.5396 26.517 13.6689 25.7079 13.1712Z" fill="#171717"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5 footer-small-menu">
+                        <ul class="list-inline">
+                            <li><a href="#footer">Press</a></li>
+                            <li><a href="#footer">Warranty</a></li>
+                            <li><a href="#footer">Privacy</a></li>
+                            <li><a href="#footer">Terms of Service</a></li>
+                            <li><a href="#footer">Refund policy</a></li>
+                        </ul>
+                        <span>Copyright 2023 July</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
