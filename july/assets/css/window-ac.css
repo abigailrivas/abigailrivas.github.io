@@ -1,0 +1,156 @@
+@import "/july/assets/css/variables&base.css";
+
+/* HEADER  */
+header{
+    margin-top: 1rem;
+}
+
+/* PRODUCT SECTION  */
+
+.product-choices--white{
+    margin-top: 1rem;
+    color: white;
+}
+
+
+/* INSTALL CUSTOM SECTION */
+.install-custom-section{
+    margin-top: 28%;
+}
+
+.install-custom-section, .faqs{
+    padding: 1rem;
+}
+
+.install-custom-section__video{
+    height: 500px;
+}
+
+.install-custom-section__content, .white-global-features__content, 
+.accessories__content{
+    padding: 2rem;
+}
+
+.install-custom-section__content h3, .white-global-features__content h3,
+.accessories__content h3{
+    color: black;
+    text-align: left;
+}
+
+.install-custom-section__content p:first-of-type, .white-global-features__content p, .accessories__content p{
+    margin-bottom: 2rem;
+}
+
+.video-viewport{
+    display: block;
+    height: 830px; 
+} 
+
+.install-steps{
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.install-steps:first-child ::before{
+    content: "1";
+    position: absolute;
+    top: 0rem;
+    left: -2rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+}
+
+.install-steps:nth-child(2) ::before{
+    content: "2";
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+}
+
+.install-steps:last-child ::before{
+    content: "3";
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+    padding: 0.2rem;
+}
+
+.white-global-features-item img{
+    max-width: 50px;
+}
+
+.white-global-features-item h4, .white-global-features-item p{
+    text-align: center;
+}
+
+.white-global-features__img img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+/* WIFI */
+.wifi-feature{
+    display: flex;
+    flex-direction: column;
+    column-gap: 3rem;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 300px;
+    height: 400px;
+}
+
+.wifi-feature h3{
+    font-family: var(--font-family-text);
+    text-transform: none;
+    font-weight: 600;
+    color: black;
+}
+
+/* FAQS  */
+.faqs{
+    padding-top: 3rem;
+}
+
+.faqs__title{
+    position: relative;
+}
+
+.faqs__title::after{
+    content: "";
+    position: absolute;
+    background: url(https://cdn.shopify.com/s/files/1/0348/3267/9044/files/flower.png?v=1647418947) no-repeat;
+    background-size: contain;
+    top: 10%;
+    right: 110%;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    animation: rotate 6s infinite linear;
+}
+
+/* FOOTER  */
+.margin-top{
+    margin-top: 2rem;
+}
+

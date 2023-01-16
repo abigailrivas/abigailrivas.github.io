@@ -1,13 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>July Air Aconditioner | July</title>
+
+    <link rel="shortcut icon"
+        href="//cdn.shopify.com/s/files/1/0248/0481/9023/files/favicon_41425073-15b4-4688-9be5-b301259743d1_32x32.png?v=1587741198"
+        type="image/x-icon">
+
+    <!--======== BOOTSTRAP =========-->
+    <link rel="stylesheet" href="/july/assets/scss/base.css">
+    <script src="/july/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!--======== CSS =========-->
+
+    <link rel="stylesheet" href="/july/assets/css/window-ac.css">
+    <link rel="stylesheet" href="/july/assets/css/variables&base.css">
+    <link rel="stylesheet" href="/july/assets/css/home.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
+
 <body>
-    <li><a href="/july/views/shop-july.html" class="nav__link nav__link--active">Shop July</a></li>
-    
+    <!--======== HEADER =========-->
+    <header class="header" id="header">
+        <div>
+            <a href="/july/views/home.html" id="logo">
+                <svg width="100" height="56" viewBox="0 0 103 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M21.2614 5.10014C21.2614 7.91704 23.5438 10.2003 26.3589 10.2003C29.1743 10.2003 31.4565 7.91704 31.4565 5.10014C31.4565 2.28353 29.1743 0 26.3589 0C23.5438 0 21.2614 2.28353 21.2614 5.10014ZM73.6642 0.845975L73.6133 23.8537C73.6091 26.7662 72.8804 29.6069 71.5261 31.9906L63.0363 46.9362H54.5343L63.058 32.0122C64.4269 29.6153 65.1617 26.7533 65.1617 23.8191V0.845975H73.6642ZM60.0692 13.8106L60.0254 23.8496C60.0164 26.7648 59.282 29.6061 57.9221 31.9877L55.8759 35.5722C53.807 39.1944 51.1074 42.1778 47.7756 44.3792C44.4437 46.6515 40.8243 47.7172 36.9181 47.7172C33.0118 47.7172 30.6566 46.6515 29.8524 44.3792C29.048 42.1778 29.6801 39.1944 31.7481 35.5722L33.7954 32.0361C35.1911 29.6248 35.9415 26.7343 35.9415 23.7692V13.8106H44.4437L44.3554 23.9143C44.3382 26.7892 43.6155 29.5901 42.2831 31.9465L40.1925 35.6435C39.4456 36.9929 39.1012 38.0582 39.1587 38.9105C39.216 39.7628 39.9053 40.189 41.2265 40.189C42.4906 40.189 43.6397 39.7628 44.6735 38.9105C45.7076 38.0582 46.6265 36.9929 47.3733 35.6435L49.4658 32.0429C50.8695 29.6277 51.6241 26.7288 51.6241 23.7549V13.8106H60.0692ZM103 13.8106L102.956 23.8644C102.947 26.7705 102.218 29.6032 100.866 31.9805L89.2203 52.3838C88.4162 53.8748 87.3248 55.0115 86.0605 55.7925C84.7971 56.5736 83.4758 57 81.9821 57H66.2767L70.6424 49.2586L81.576 49.0704C82.2233 49.0591 82.8281 48.6686 83.2054 48.0172L84.7312 45.3831C83.5248 45.6671 82.2614 45.8093 80.9396 45.8093C77.0337 45.8093 74.6784 44.7438 73.8738 42.4715C73.0698 40.27 73.7019 37.2867 75.7698 33.6647L76.7265 32.0361C78.1223 29.6248 78.8727 26.7343 78.8727 23.7692V13.8106H87.3747V23.7549C87.3747 26.7288 86.6196 29.6277 85.2159 32.0429L84.2144 33.7357C83.4673 35.085 83.123 36.1507 83.1804 37.0027C83.2379 37.855 83.9271 38.2812 85.2484 38.2812C86.5122 38.2812 87.6616 37.855 88.6955 37.0027C89.729 36.1507 90.648 35.085 91.3951 33.7357L92.3971 32.0429C93.8003 29.6277 94.5554 26.7288 94.5554 23.7549V13.8106H103ZM2.23353 35.5722L5.71529 29.5174H14.1064L10.6781 35.6432C9.93121 36.9927 9.58654 38.0582 9.64406 38.9105C9.70162 39.7628 10.3907 40.189 11.7121 40.189C12.9761 40.189 14.1249 39.7628 15.1589 38.9105C16.1929 38.0582 17.1119 36.9927 17.8588 35.6432L19.9513 32.0429C21.3549 29.6277 22.1097 26.7288 22.1097 23.7549V13.8106H30.5545L30.5107 23.8496C30.5018 26.7648 29.7676 29.6061 28.4078 31.9878L26.3611 35.5722C24.2928 39.1945 21.5929 42.1778 18.261 44.3792C14.929 46.6515 11.3099 47.7172 7.40345 47.7172C3.49719 47.7172 1.14198 46.6515 0.337812 44.3792C-0.466593 42.1778 0.165713 39.1945 2.23353 35.5722Z"
+                        fill="white"></path>
+                </svg>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav__menu">
+                <li>
+                    <a href="#nav__menu" class="nav__link nav__link--active" id="has-dropdown">Shop July</a>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="/july/views/window-ac.html">July A/C</a></li>
+                        <li><a href="/july/views/accesories/accesories.html">Accesories</a></li>
+                    </ul>
+                <li><a href="#refer-a-friend" class="nav__link" onclick="showReferAfriend()">Refer a Friend</a></li>
+                <li><a href="/july/views/about-us.html" class="nav__link">About</a></li>
+                <li><a href="/july/views/reviews.html" class="nav__link">Reviews</a></li>
+                <li><a href="#" class="nav__link">Help</a></li>
+                <li><a href="#cart" class="nav__link">
+                        <div class="cart" onclick="showCart()">
+                            <span>Cart</span>
+                            <span class="cart-items">0</span>
+                        </div>
+                    </a></li>
+            </ul>
+        </nav>
+
+        <div class="ham-menu">
+            <ul class="nav__menu">
+                <li>
+                    <a href="/july/views/shop-july.html" class="nav__link nav__link--active">
+                        Shop july
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">July A/C</a></li>
+                        <li><a class="dropdown-item" href="#">Accesories</a></li>
+                    </ul>
+                </li>
+                <li><a href="#refer-a-friend" class="nav__link" onclick="showReferAfriend()">Refer a Friend</a></li>
+                <li><a href="/july/views/about-us.html" class="nav__link">About</a></li>
+                <li><a href="/july/views/reviews.html" class="nav__link">Reviews</a></li>
+                <li><a href="#" class="nav__link">Help</a></li>
+                <li><a href="#cart" class="nav__link">
+                        <div class="cart" onclick="showCart()">
+                            <span>Cart</span>
+                            <span class="cart-items">0</span>
+                        </div>
+                    </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!--======== PRODUCT =========-->
+        <section class="product-section container">
+            <div class="row">
+                <div class="col-7">
+
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <h1 class="fs-2 product-title" style="text-align: start;">
+                                July Air conditioner
+                                <img class="blink"
+                                    src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/blink-animated.gif">
+                            </h1>
+                        </div>
+                        <div class="col-6 d-flex align-items-center">
+                            <a href="#reviews" class="rating-stars">
+                                <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17 0L20.8167 11.7467L33.168 11.7467L23.1756 19.0066L26.9923 30.7533L17 23.4934L7.00765 30.7533L10.8244 19.0066L0.832039 11.7467L13.1833 11.7467L17 0Z"
+                                        fill="#FCD23A"></path>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17 0L20.8167 11.7467L33.168 11.7467L23.1756 19.0066L26.9923 30.7533L17 23.4934L7.00765 30.7533L10.8244 19.0066L0.832039 11.7467L13.1833 11.7467L17 0Z"
+                                        fill="#FCD23A"></path>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17 0L20.8167 11.7467L33.168 11.7467L23.1756 19.0066L26.9923 30.7533L17 23.4934L7.00765 30.7533L10.8244 19.0066L0.832039 11.7467L13.1833 11.7467L17 0Z"
+                                        fill="#FCD23A"></path>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17 0L20.8167 11.7467L33.168 11.7467L23.1756 19.0066L26.9923 30.7533L17 23.4934L7.00765 30.7533L10.8244 19.0066L0.832039 11.7467L13.1833 11.7467L17 0Z"
+                                        fill="#FCD23A"></path>
+                                </svg>
+                                <svg width="22" height="22" viewBox="0 0 34 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M17 0L20.8167 11.7467L33.168 11.7467L23.1756 19.0066L26.9923 30.7533L17 23.4934L7.00765 30.7533L10.8244 19.0066L0.832039 11.7467L13.1833 11.7467L17 0Z"
+                                        fill="#FCD23A"></path>
+                                </svg>
+                                <em>(4.9)</em>
+
+                            </a>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <form class="product-choices--white" action="/card/add" method="post">
+                                    <div class="payment-line">
+                                        <div class="price">
+                                            <strong>
+                                                <span class="price-options">$399</span>
+                                            </strong>
+                                            <strong>|</strong>
+                                        </div>
+                                        <em>
+                                            Or 4 interest-free payments of
+                                            <span class="price-four-payments">$100</span>
+                                            with
+                                        </em>
+                                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-logo-dark.png?v=26600183519341656981652868947"
+                                            alt="">
+                                        <a href="#affirm-popup" class="affirm-modal-btn" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">?</a>
+                                    </div>
+                                    <div class="modal fade affirm-pop-up" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div style="display: flex;">
+                                                        <div>
+                                                            <img class="affirm-popup__img"
+                                                                src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-modal-image.png?v=13917431263619600331652868954"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="">
+                                                            <h1 class="modal-title fs-2 affirm-popup__title"
+                                                                style="color:black;" id="exampleModalLabel">BUY NOW,
+                                                                <br> PAY OVER TIME
+                                                            </h1>
+                                                            <div class="logos-container">
+                                                            </div>
+                                                            <p>
+                                                                July has partnered with Shop Pay by Affirm to offer our
+                                                                customers the option of paying for their purchase in 4
+                                                                interest-free installments. It’s that simple.
+                                                                <br><br>
+                                                                During the checkout flow, select “Shop Pay Installments”
+                                                                to see if you qualify.
+                                                            </p>
+                                                            <p class="affirm-popup__small-text">
+                                                                The estimated payment amount excludes taxes and
+                                                                shipping. Payment options are offered by Affirm and are
+                                                                subject to
+                                                                eligibility check and might not be available in all
+                                                                states. California residents:
+                                                                Affirm Loan Services, LLC is licensed by the Department
+                                                                of Business Oversight. Loans are made or arranged
+                                                                pursuant to
+                                                                California Financing Law license.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="window-type-selection">
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="hero-bg">
+                <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/product-bg.png?v=1638270923" alt="">
+            </div>
+        </section>
+
+        <!--======== FEATURES =========-->
+        <section class="install-custom-section flex-container">
+            <div class="row">
+                <div class="col">
+                    <div class="install-custom-section__video">
+                        <video width="1920" height="1280" autoplay playsinline muted loop
+                            src="https://cdn.shopify.com/videos/c/o/v/63cd597a03b84cbeaab0ea9cd1c69216.mp4"></video>
+                    </div>
+                </div>
+                <div class="col install-custom-section__content">
+                    <h3>Ridiculously easy self-install</h3>
+                    <p class="fs-5">Our patented technology makes installing July in your window safer, easier, and
+                        quicker than other A/Cs. See it in action for yourself.</p>
+                    <ul>
+                        <li class="install-steps">
+                            <span class="fs-5 m-1">Put our patent installation frame in your window and screw it in with
+                                the holes provided to keep it secure.</span>
+                        </li>
+                        <li class="install-steps">
+                            <span class="fs-5 m-1">Slide your July into the frame until you hear it click.</span>
+                        </li>
+                        <li class="install-steps">
+                            <span class="fs-5 m-1">Add your magnetic front panel, plug it in and turn it on!</span>
+                        </li>
+                    </ul>
+                    <p class="fs-5">Not comfortable installing it yourself? Choose our white-glove installation service
+                        at checkout.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 3rem;">
+
+                <div class="col white-global-features__content">
+                    <h3>White-glove install, nationwide</h3>
+                    <p class="fs-5">
+                        Don’t want to do the heavy lifting? No problem. Get your July installed nationwide through our
+                        partnership with Handy. Select this option during checkout so you can sit back and relax.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div
+                            class="d-flex flex-column  justify-content-center align-items-center white-global-features-item">
+                            <img src="https://cdn.shopify.com/s/files/1/0348/3267/9044/files/badge.svg?v=1647241057" alt="">
+                            <h4>Expert</h4>
+                            <p>Only vetted and professional providers</p>
+                        </div>
+                        <div
+                            class="d-flex flex-column justify-content-center align-items-center white-global-features-item">
+                            <img src="https://cdn.shopify.com/s/files/1/0348/3267/9044/files/hand.svg?v=1647241058?v=1644847690"
+                                alt="">
+                            <h4>Courteous</h4>
+                            <p>Taking the utmost care in your home.</p>
+                        </div>
+                        <div
+                            class="d-flex flex-column justify-content-center align-items-center white-global-features-item">
+                            <img src="https://cdn.shopify.com/s/files/1/0348/3267/9044/files/check.svg?v=1647241058"
+                                alt="">
+                            <h4>Guaranteed</h4>
+                            <p>Protected by Handy’s service guarantee</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col white-global-features__img">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/PDP_Easy_Install.png?v=1652864744"
+                        alt="">
+                </div>
+                <div class="row" style="margin-top: 3rem;">
+                    <div class="col">
+                        <div id="carouselExampleAutoplaying" class="carousel slide carousel--border-radius" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Insulation_Kit_650x525.png?v=1652865073" class="d-block w-100" alt="Insulation Panel Kit">
+                                    <div class="carousel-july-caption">
+                                        <p class="caption-title">Insulation Panel Kit</p>
+                                        <p> to create a strong seal against the elements</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Plexiglass_a9c5bd86-bb08-49d1-bd94-da3a91b174f3_650x525.png?v=1655375606" class="d-block w-100" alt="Plexiglass Side Panel">
+                                    <div class="carousel-july-caption">
+                                        <p class="caption-title">Plexiglass Side Panel</p>
+                                        <p>that let you reclaim your window and let the light in</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Filters_650x525.png?v=1652865002" class="d-block w-100" alt="Air Purifying Sky Filters">
+                                    <div class="carousel-july-caption">
+                                        <p class="caption-title">Air Purifying Sky Filters</p>
+                                        <p>that cleanse the air you breathe of harmful pollutants</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Solid_Side_Panel_650x525.png?v=1652865097" class="d-block w-100" alt="Solid Side Panels">
+                                    <div class="carousel-july-caption d-flex d-md-block">
+                                        <p class="caption-title">Solid Side Panels</p>
+                                        <p> to create a tight seal while maintaining July’s sleek look</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col accessories__content">
+                        <h3>Accessorize July like never before</h3>
+                        <p class="fs-5">
+                            We’re the most customizable window A/C there ever was. Scroll through some of the
+                            accessories that make July special. You’ll have the option to add them during checkout.
+                        </p>
+                        <a href="/july/views/accesories/accesories.html" class="btn-third">See more of July's
+                            accessories</a>
+                    </div>
+                </div>
+        </section>
+
+        <!--======== WIFI =========-->
+        <section>
+            <div class="flex-container px-4 py-4">
+                <h2 class="pb-2 pt-5 fs-1 text-center">WiFi-connected & voice-enabled</h2>
+                <div class="row py-2 d-flex justify-content-center row-cols-1 row-cols-lg-3">
+                    <div class="col wifi-feature m-3">
+                        <d class="mb-3">
+                            <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/wifi_small.png?v=1652865184" alt="">
+                        </d>
+                        <h3 class="fs-4 mb-4">Control July with our app</h3>
+                        <p class="fs-5">Our iOS and Android apps allow you to turn your phone into a remote control.</p>
+                    </div>
+                    <div class="col wifi-feature m-3">
+                        <div class="mb-3">
+                            <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/bird_small.png?v=1652865209" alt="">
+                        </div>
+                        <h3 class="fs-4 mb-4">Use your voice assistant</h3>
+                        <p class="fs-5">Connect to Amazon Alexa or Google Home to control your July with your voice.</p>
+                    </div>
+                    <div class="col wifi-feature m-3">
+                        <div class="mb-3">
+                            <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/flower_small.png?v=1652865235" alt="">
+                        </div>
+                        <h3 class="fs-4 mb-4">Turn it on before you’re home</h3>
+                        <p class="fs-5">Use the app to turn July on before you get home so it’s nice and cool when you arrive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FAQS ================ -->
+        <section class="faqs flex-container">
+            <div class="row">
+                <div class="col-5 d-flex justify-content-center align-items-center">
+                    <h4 class="fs-1 fw-bold faqs__title">Frequently <br> Asked <br> Questions</h4>
+                </div>
+                <div class="col-7">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <span class="fs-4">Can I install July myself?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    July is the easy install window A/C - and its the safest and fastest too. Our
+                                    installation frame makes the experience a breeze - pop the installation frame into
+                                    the window and slide July right in. If you can lift 50lbs - you can do it. We also
+                                    offer our installation service nationwide if you want us to do the heavy lifting.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="fs-4">Can July be installed through-the-wall or in slider
+                                        windows?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    At the moment, July can only be installed in vertically-opening windows (single hung
+                                    or double hung). We do not recommend July for a through-the-wall installation or
+                                    slider window. We’ve got new models on the way for 2022, so sign up for our
+                                    newsletter to be kept in the loop.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="fs-4">Where do you offer your installation services?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    We offer A/C installation services nationwide through our partnership with Handy.
+                                    Your July will be professionally installed in a safe manner by experts who know what
+                                    they're doing. You'll have the option to add it on during checkout.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span class="fs-4">How do I control my July?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    Any way you like. Control July from the on-device control panel; the remote control;
+                                    the July app, available for your Apple or Android device; or via your voice with
+                                    Amazon Alexa or Google Home. The remote comes with every July, and we’re working on
+                                    Apple HomeKit and Siri integrations to launch soon!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <span class="fs-4">What comes out of the box with July?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    July comes with everything you need: our groundbreaking installation frame, side
+                                    panels to insulate your window, and a remote control to offer maximum control.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <span class="fs-4">What is my 30-day trial and return policy?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    We are confident you’ll love your July. But to give you that extra protection, we
+                                    have two programs that will give you peace of mind. You’re covered by our 1-year
+                                    limited warranty, which protects against manufacturer defects or issues. Learn more
+                                    about our warranty in the Specs section. You’re also covered by a 30-day free trial:
+                                    after you receive your July, if you don’t like it for any reason, you can return it
+                                    for a full refund any time in the first 30 days. Learn more in our Terms.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <span class="fs-4">What smart home systems is July compatible with?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    July is compatible with Amazon Alexa and Google Home, with a Siri and HomeKit
+                                    integration on the way. Beyond that, you can control July from the remote control or
+                                    the iOS and Android apps.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    <span class="fs-4">What is your warranty?</span>
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    We offer a 1-year limited warranty on any manufacturer defects or operational issues
+                                    and starts on the day you receive your July. Please note, this does not cover
+                                    accidental damage. Unlike with appliances you're used to, you'll be automatically
+                                    registered for the warranty when you purchase - without having to fill out any
+                                    forms. Looking for more protection? Add coverage for up to 3 years (including
+                                    accident protection) from our partners at Clyde. You'll see the pop up during
+                                    checkout.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ================ -->
+    <footer class="row margin-top">
+        <div class="col-12">
+            <div class="footer">
+                <div class="footer__insta-feed">
+                    <a href="https://www.instagram.com/feelslike.july/" target="_blank">
+                        <img src="/july/assets/images/insta.svg" alt="">
+                    </a>
+                </div>
+                <div class="row m-5">
+                    <div class="col-3 footer-logo-col">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/july-ac-menu-shape.svg"
+                            alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/july-logo-footer_103x57.png?v=1624963170"
+                            alt="">
+                    </div>
+                    <div class="col-5">
+                        <div class="footer-cols">
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Shop</h4>
+                                <ul>
+                                    <li><a href="/july/views/window-ac.html">Air Conditioner</a></li>
+                                    <li><a href="/july/views/accesories/air-purifying-sky-filters.html">Air Filters</a>
+                                    </li>
+                                    <li><a href="/july/views/accesories/plexiglass-kit.html">Plexiglass kit</a></li>
+                                    <li><a href="/july/views/accesories/accesories.html">All accesories</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Company</h4>
+                                <ul>
+                                    <li><a href="/july/views/about-us.html">About</a></li>
+                                    <li><a href="#footer">Help</a></li>
+                                    <li><a href="/july/views/reviews.html">Reviews</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-list">
+                                <h4 class="footer-list__header">Social</h4>
+                                <ul>
+                                    <li>
+                                        <a href="https://www.instagram.com/feelslike.july/" target="_blank">
+                                            Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.facebook.com/feelslikejuly" target="_blank">
+                                            Facebook
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.twitter.com/feelslike_july" target="_blank">
+                                            Twitter
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://open.spotify.com/user/wp6vvfp223ovocqa9ootyrwqa"
+                                            target="_blank">
+                                            Spotify
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 footer-newsletter">
+                        <p class="fs-5">Our emails are a tall drink of water.</p>
+                        <p>Special offers, new product launches and more from July. No spam. We promise.</p>
+                        <form action="" method="post" class="form-newsletter">
+                            <input type="email" placeholder="Enter you email" name="email" id="email">
+                            <button class="submit" type="submit">Subscribe me</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 carbon-free-logo__container">
+                        <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/carbon-free-logo.png?v=22099762200256831121652440728"
+                            alt="">
+                    </div>
+                    <div class="col-4 app__container">
+                        <p class="fs-5">Get the July App</p>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://apps.apple.com/us/app/july-a-c/id1525603976">
+                                    <svg width="22" height="26" viewBox="0 0 25 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M24.9712 21.8097C24.9666 21.7771 24.96 21.7472 24.96 21.7167V21.1832L24.691 21.0293C22.4524 19.7501 21.3643 17.9059 21.3643 15.3921C21.3643 13.2792 22.2301 11.4676 23.8024 10.2869L24.4205 9.95953L24.0156 9.43034C22.966 8.05924 21.2593 6.23677 18.565 6.23677C18.063 6.23677 17.5987 6.36622 17.1424 6.55276C18.2386 5.27303 18.8324 3.65236 18.8324 1.7918C18.8324 1.50244 18.8005 1.16798 18.7634 0.781323L18.7512 0.655142C18.7487 0.629046 18.7441 0.60295 18.7385 0.577399L18.6994 0.410954C18.6659 0.269576 18.5811 0.148239 18.4639 0.0748553C18.3456 0.000866297 18.2066 -0.0192355 18.0746 0.0188489C15.391 0.795491 12.5236 3.06886 12.5236 7.11791C12.5236 7.33437 12.5434 7.58564 12.5728 7.84939C12.1282 7.72539 11.7395 7.49046 11.3117 7.22775C10.6169 6.80246 9.82977 6.31947 8.6864 6.31947C3.56724 6.31947 0 11.2985 0 15.7675C0 18.2247 0.720646 22.4815 2.74964 26.3908C4.29551 29.4065 6.1301 31 8.05508 31C8.76205 31 9.47608 30.7101 10.2318 30.4034C11.0707 30.0624 11.938 29.7105 12.8759 29.7105C13.6407 29.7105 14.4222 30.0025 15.1779 30.2848C15.9553 30.5757 16.7597 30.8765 17.5773 30.8765C21.6028 30.8765 25 25.508 25 22.1366C25.0001 22.0137 24.9859 21.9077 24.9712 21.8097Z"
+                                            fill="#171717"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://play.google.com/store/apps/details?id=com.july.android">
+                                    <svg width="21" height="26" viewBox="0 0 27 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.07217 0.39507C3.28461 -0.0856766 2.34598 -0.128665 1.52736 0.271553L15.2527 14.2193L19.7405 9.64733L4.07217 0.39507ZM0.266303 1.56243C0.0931464 1.93419 0 2.34773 0 2.77338V28.2869C0 28.7143 0.0937436 29.1218 0.268692 29.4857L13.9887 15.5071L0.266303 1.56243ZM15.2546 16.7931L1.55131 30.7548C1.91494 30.9255 2.30185 31 2.68817 31C3.16525 31 3.64113 30.8844 4.07223 30.6216L19.7435 21.3554L15.2546 16.7931ZM25.7079 13.1712C25.7025 13.1676 25.6965 13.1639 25.6912 13.1609L21.3408 10.5919L16.518 15.5053L21.3437 20.409C21.3437 20.409 25.7025 17.8321 25.7079 17.8291C26.517 17.3308 27 16.4601 27 15.4998C27 14.5396 26.517 13.6689 25.7079 13.1712Z"
+                                            fill="#171717"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5 footer-small-menu">
+                        <ul class="list-inline">
+                            <li><a href="#footer">Press</a></li>
+                            <li><a href="#footer">Warranty</a></li>
+                            <li><a href="#footer">Privacy</a></li>
+                            <li><a href="#footer">Terms of Service</a></li>
+                            <li><a href="#footer">Refund policy</a></li>
+                        </ul>
+                        <span>Copyright 2023 July</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/july/assets/js/base.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
