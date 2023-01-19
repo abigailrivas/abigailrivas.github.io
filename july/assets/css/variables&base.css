@@ -275,6 +275,32 @@ header{
     opacity: .75;
 }
 
+.switch{
+    display: flex;
+    column-gap: 0;
+}
+
+.switch button{
+    border-radius: 2rem;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.switch button:first-child{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.switch button:last-child{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.switch .selected{
+    background-color: white;
+}
 
 /* ========= CONFIGURE JULY ======== */
 .configure-july{

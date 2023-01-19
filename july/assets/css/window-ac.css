@@ -6,17 +6,64 @@ header{
 }
 
 /* PRODUCT SECTION  */
+.product-section{
+    margin: 0 3rem;
+}
+
+.product-preview{
+    background-color: white;
+    border-radius: 1.2rem;
+    width: 90px;
+    height: 700px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem 0.6rem;
+    margin-right: 1rem;
+}
+.product-preview .product-preview-item img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
 
 .product-choices--white{
     margin-top: 1rem;
     color: white;
 }
 
-
-/* INSTALL CUSTOM SECTION */
-.install-custom-section{
-    margin-top: 28%;
+/* SPECS  */
+.specs__container{
+    background-color: var(--secondary-color-light);
+    margin: 2rem 1rem 5rem;
+    padding: 2rem;
+    border-radius: 1rem;
 }
+
+.specs__container h3{
+    color: black;
+}
+
+.specs__img-container img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.specs-s ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+    padding-left: 0;
+}
+
+.specs-s ul li{
+    display: flex;
+    flex-direction: column;
+}
+
+/* FEATURES*/
 
 .install-custom-section, .faqs{
     padding: 1rem;
