@@ -244,9 +244,15 @@
             <h1>Match July to your style</h1>
             <h4>2 sizes. 3 materials. 7 colors. Starts at $399</h4>
             <a href="" class="guarantee">30-Day Trial | 1-Year Warranty | Easy Returns</a>
-            <div class="color-choices__carrousel">
-                <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/opened_560x394.png?v=1652862113"
-                    alt="">
+            <div class="color-choices-carrousel">
+                <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/opened_560x394.png?v=1652862113" alt="">
+                <div class="color-choices-options">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Matte_White_560x394.png?v=1652862158" alt="white">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Forest_Green_560x394.png?v=1652862210" alt="Forest Green">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Rose_560x394.png?v=1652862197" alt="Rose">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Linen_830eb984-db8b-4550-895a-7656a51f5da3_560x394.png?v=1655706209" alt="Linen">
+                    <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/files/Wood_560x394.png?v=1652862168" alt="Wood">
+                </div>
             </div>
             <a class="cta" href="/july/views/shop-july.html">
                 <p>See all the options</p>
@@ -266,20 +272,21 @@
                 </div>
                 <div class="col-6">
                     <form class="product-form" action="/card/add" method="post">
-                        <div class="payment-line">
-                            <div class="price">
-                                <strong>
-                                    <span class="price-options">$399</span>
-                                </strong>
-                                <strong>|</strong>
+                        <div class="payment-line d-flex justify-content-between align-items-center">
+                            <div class="d-flex">
+                                <div class="price">
+                                    <strong>
+                                        <span class="price-options">$399</span>
+                                    </strong>
+                                    <strong>|</strong>
+                                </div>
+                                <em>
+                                    Or 4 interest-free payments of
+                                    <span class="price-four-payments">$100</span>
+                                    with
+                                </em>
+                                <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-logo-dark.png?v=26600183519341656981652868947" alt="Affirm logo">
                             </div>
-                            <em>
-                                Or 4 interest-free payments of
-                                <span class="price-four-payments">$100</span>
-                                with
-                            </em>
-                            <img src="https://cdn.shopify.com/s/files/1/0248/0481/9023/t/17/assets/affirm-logo-dark.png?v=26600183519341656981652868947"
-                                alt="">
                             <a href="#affirm-popup" class="affirm-modal-btn" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">?</a>
                         </div>
@@ -327,9 +334,93 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="window-type-selection">
-
+                        <div class="window-type">
+                            <div class="window-type-text d-flex justify-content-between">
+                                <span>
+                                    <strong>Select a Window Type: </strong>
+                                    Standard
+                                </span>
+                                <a href="#" class="underline-wave">Not Sure?</a>
+                            </div>
+                            <div class="window-type-selection">
+                                <label for="window-type-standard" class="window-type-option selected d-flex flex-column">
+                                    <input type="checkbox" name="window-type-standard" id="window-type-standard">
+                                    <strong>Standard Window</strong>
+                                    <span>Opens vertically</span>
+                                </label>
+                                <label for="window-type-slider" class="window-type-option d-flex flex-column">
+                                    <input type="checkbox" name="window-type-slider" id="window-type-slider">
+                                    <strong>Slider Window</strong>
+                                    <span>Opens horizontally</span>
+                                </label>
+                                <label for="window-type-thru-the-wall" class="window-type-option d-flex flex-column">
+                                    <input type="checkbox" name="window-type-thru-the-wall" id="window-type-thru-the-wall">
+                                    <strong>Thru-the-wall</strong>
+                                    <span>Slides into a wall slot</span>
+                                </label>
+                            </div>
                         </div>
+                        <div class="window-size">
+                            <div class="window-size-text d-flex justify-content-between">
+                                <span>
+                                    <strong>Select a Window Size: </strong>
+                                    Small
+                                </span>
+                                <a href="#" class="underline-wave">Not Sure?</a>
+                            </div>
+                            <div class="window-size-selection">
+                                <label for="window-size-small" class="window-size-option selected d-flex flex-column">
+                                    <input type="checkbox" name="window-size-small" id="window-size-small">
+                                    <strong>Small</strong>
+                                    <span>6,000 BTU | Up to 250 sq. ft.</span>
+                                </label>
+                                <label for="window-size-medium" class="window-size-option d-flex flex-column">
+                                    <input type="checkbox" name="window-size-medium" id="window-size-medium">
+                                    <strong>Medium</strong>
+                                    <span>8,000 BTU | Up to 350 sq. ft.</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="window-cover">
+                            <div class="window-cover-text d-flex justify-content-between">
+                                <span>
+                                    <strong>Select a Window Cover: </strong>
+
+                                </span>
+                            </div>
+                            <div class="window-cover-selection">
+                                <label for="window-cover-small" class="window-cover-option selected d-flex flex-column">
+                                    <span>Matte Colors</span>
+                                    <input type="checkbox" name="window-cover-small" id="window-cover-small">
+                                </label>
+                                <label for="window-cover-medium" class="window-cover-option d-flex flex-column">
+                                    <span>Premium Materials</span>
+                                    <input type="checkbox" name="window-cover-medium" id="window-cover-medium">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="air-filter">
+                            <div class="air-filter-text d-flex justify-content-between">
+                                <span>
+                                    <strong>Select an Air Filter: </strong>
+                                    
+                                </span>
+                                <a href="#" class="underline-wave">Learn More</a>
+                            </div>
+                            <div class="air-filter-selection">
+                                <label for="air-filter-small" class="air-filter-option d-flex flex-column">
+                                    <input type="checkbox" name="air-filter-small" id="air-filter-small">
+                                    <strong>Air Purifying</strong>
+                                    <span>3-months supply</span>
+                                </label>
+                                <label for="air-filter-medium" class="air-filter-option d-flex flex-column">
+                                    <input type="checkbox" name="air-filter-medium" id="air-filter-medium">
+                                    <strong>No thanks</strong>
+                                    <span>Standard filter only</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="cta mt-4">Add to cart</button>
                     </form>
                 </div>
             </div>

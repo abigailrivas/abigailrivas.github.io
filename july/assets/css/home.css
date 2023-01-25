@@ -159,7 +159,7 @@ video{
     align-items: center;
     flex-direction: column;
     row-gap: 1.5rem;
-    padding: 2rem;
+    padding: 2rem 0;
     position: relative;
 }
 
@@ -175,9 +175,38 @@ video{
 }
 
 .color-choices-carrousel{
+    position: relative;
     display: flex;
     justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.color-choices-options{
+    display: flex;
+    position: absolute;
+    column-gap: 4rem;
+    top: -0.8rem;
+    left: 32%;
+    justify-content: center;
     padding-top: 2rem;
+    animation: translateCarrousel 10s  2s linear infinite;
+}
+
+@keyframes translateCarrousel{
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-20vw);
+    }
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+
+.color-choices-options img{
+    width: 460px;
 }
 
 .color-choices__container::after{
