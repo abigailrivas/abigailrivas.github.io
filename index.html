@@ -5,74 +5,201 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abigail Rivas | Portfolio</title>
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <title>Abigail Rivas Portfolio</title>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
 
     <!--  ========== CSS ========== -->
     <link rel="stylesheet" href="styles.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
-    <header id="home">
-        <a href="#"><img src="/images/logo.png" alt="Abigail Rivas Portfolio Logo" class="logo"></a>
-        <nav>
+    <header>
+        <div id="menu-icon"><img src="./images/menu_icon.svg" alt=""  class="menu-icon"></div>
+
+        <div class="menu__container flex-column" id="menu-container">
+            <img src="./images/close_icon.svg" alt="Close Menu" class="close-icon" id="menu-close-icon">
             <ul>
-                <a href="#home">
-                    <li class="nav-item">Inicio</li>
+                <a href="#home" >
+                    <li class="menu-item">
+                        <img src="./images/HOME.svg" alt="Home link">
+                    </li>
                 </a>
-                <a href="#proyectos">
-                    <li class="nav-item">Proyectos</li>
+                <a href="#about-me">
+                    <li class="menu-item">
+                        <img src="./images/ABOUT ME.svg" alt="About Me link">
+                    </li>
                 </a>
-                <a href="#aboutMe">
-                    <li class="nav-item" style="width: 80px;">Sobre mí</li>
+                <a href="#skills">
+                    <li class="menu-item">
+                        <img src="./images/SKILLS.svg" alt="Skills link">
+                    </li>
+                </a>
+                <a href="#my-work">
+                    <li class="menu-item">
+                        <img src="./images/MY WORK.svg" alt="My work link">
+                    </li>
+                </a>
+                <a href="#contact">
+                    <li class="menu-item">
+                        <img src="./images/CONTACT.svg" alt="Contact link">
+                    </li>
                 </a>
             </ul>
-        </nav>
+        </div>
     </header>
-    <section class="column">
-        <div class="home-row grid">
-            <div class="home-semi-row grid">
-                <div class="home-semi-row--pink">
-                    <span class="circle"></span>
-                    <span class="circle"></span>
-                    <span class="circle"></span>
+    
+    <!-- <div class="robot"><img src="./images/robot.png" alt=""></div> -->
+
+    <section id="home">
+     <div class="home flex-column"> 
+        <img src="./images/home_title.svg" alt="Abigail Rivas" class="home-title" data-scroll>
+        <div class="subtitle subtitle--home subtitle--large">
+            <h2>A creative UX/UI designer & developer</h2>
+        </div>
+     </div>
+    </section>
+    <section class="about-me grid" id="about-me">
+        <div>
+            <p class="about-me_text">Hi! I’m <span class="text-emphasis">Abi</span>.</p>
+            <p class="about-me_text">I’m a 21 y/o student based in <span class="text-emphasis--italic">Buenos Aires</span>.</p>
+            <p class="about-me_text">Currently, I’m studying <span class="text-emphasis">Computer Science</span> at the University of Buenos Aires. </p>
+            <p class="about-me_text">Also, I completed the UX Design course from <span class="text-emphasis--italic">Google</span>.</p>
+        </div>
+        <div class="display-center">
+            <p class="about-me_text">I’m a enthusiastic for design, technology, and understanding people. </p>
+            <p class="about-me_text">My mission is to create <span class="text-emphasis--italic">unforgetful</span> interfaces with <span class="text-emphasis--italic">good</span> UX experience. </p>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="skills_title flex-center">
+            <img src="./images/my_skills_text.svg" alt="My skills">
+        </div>
+        <div class="skills_subtitle flex-center">
+            <h3>UX/UI</h3>
+        </div>
+        <div class="flex-center">
+            <div class="grid grid--skills">
+                <div class="flex-column flex-column--start">
+                    <span>Design Thinking</span>
+                    <span>User centered design</span>
+                    <span>User research</span>
+                    <span>Wireframes</span>
+                    <span>Prototypes</span>
                 </div>
-                <div class="home-semi-row--orange"></div>
-            </div>
-            <div class="home-semi-row--text">
-                <h1>front-end</h1>
+                <div class="grid-3">
+                    <div class="block">
+                        <img src="./images/figma.png" alt="Figma">
+                    </div>
+                    <div class="block">
+                        <img src="./images/adobe_xd.png" alt="Adobe XD">
+                    </div>
+                    <div class="block">
+                        <img src="./images/adobe_ai.png" alt="Adobe Illustrator">
+                    </div>
+                    <div class="block">
+                        <img src="./images/miro.png" alt="Miro">
+                    </div>
+                    <div class="block">
+                        <img src="./images/notion.png" alt="Notion">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="home-row grid">
-            <div class="home-semi-row--text">
-                <h2>WEB DEVELOPER</h2>
-            </div>
-            <div class="home-semi-row grid-six-columns">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="skills_subtitle flex-center">
+            <h3 style="margin-top: 8rem;">Development</h3>
         </div>
-        <div class="home-row grid">
-            <div class="home-semi-row--black"></div>
-            <div class="grid--star">
-                <div class="home-semi-row--star">
-                    <img src="/images/star.png" alt="" class="star">
-                    <img src="/images/star.png" alt="" class="star">
-                    <img src="/images/star.png" alt="" class="star">
+        <div class="flex-center">
+            <div class="grid grid--skills">
+                <div class="flex-column flex-column--start" style="margin-top: -3rem;">
+                    <span>Responsive Design</span>
+                    <span>Mobile-first Design</span>
+                    <!-- <span>Animations <span class="text-dark">(Locomotive scroll, Anime.js)</span></span> -->
+                    <span>BEM Metodology</span>
                 </div>
-                <div class="home-semi-row--yellow">
-                    <img src="/images/world.png" alt="">
+                <div class="grid-3">
+                    <div class="block">
+                        <img src="./images/html.png" alt="html5">
+                    </div>
+                    <div class="block">
+                        <img src="./images/css.png" alt="css3">
+                    </div>
+                    <div class="block">
+                        <img src="./images/js.png" alt="JavaScript">
+                    </div>
+                    <div class="block">
+                        <img src="./images/bootstrap.png" alt="Bootstrap5">
+                    </div>
+                    <div class="block">
+                        <img src="./images/sass.png" alt="sass">
+                    </div>
+                    <div class="block">
+                        <img src="./images/vsCode.png" alt="VsCode">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="proyectos" id="proyectos">
+    <section class="flex-column" id="my-work">
+        <div>
+            <img src="./images/work_title.svg" alt="" class="my-work__title">
+        </div>
+        <div class="subtitle">
+            <h2>Selected projects</h2>
+        </div>
+    </section>
+    <section class="recommendations" id="recommendations">
+        <div class="flex-center">
+            <h3 class="recommendations__title">What people say about me</h3>
+        </div>
+        <div class="comment comment--light">
+            <span>
+                Identifies problems easily and solve them creatively.
+            </span>
+        </div>
+        <div class="comment">
+            <span>
+                Dedicated and passionate <br> about her work.
+            </span>
+        </div>
+        <div class="comment">
+            <span>
+                Strives to learn more everyday.
+            </span>
+        </div>
+        <div class="comment comment--light">
+            <span>
+                She’s capable of accomplished what she proposes.
+            </span>
+        </div>
+        <div class="comment comment--light">
+            <span>
+                Enjoys developing and <br> managing new exciting <br> projects.
+            </span>
+        </div>
+        <div class="comment">
+            <span>
+                Committed and kind.
+            </span>
+        </div>
+    </section>
+    <section class="flex-column contact" id="contact">
+        <h4 class="contact__subtitle">So i propose to you a</h4>
+        <h3 class="contact__title">TRADE OFFER</h3>
+        <div class="grid">
+            <div class="flex-column">
+                <h4 class="contact__trade-title">You receive</h4>
+                <p class="contact__text" style="width:550px">A creative <span class="text-emphasis--italic" style="font-size: 1rem;">UX/UI DESIGNER & DEVELOPER</span>, willing to give the best of herself for your project</p>
+            </div>
+            <div class="flex-column">
+                <h4 class="contact__trade-title">I receive</h4>
+                <p class="contact__text">An opportunity to develop my career and fullfill my desire to change peoples’ lives with my work.</p>
+            </div>
+        </div>
+        <a href="mailto:lourdes.2502@gmail.com" class="cta cta--contact">Contact me</a>
+    </section>
+
+    <!-- <section class="proyectos" id="proyectos">
         <div class="proys-header-container">
             <img src="/images/proyectos_header.png" alt="" class="proys-header">
             <img src="/images/star.png" alt="" class="star--small">
@@ -99,16 +226,6 @@
                 <p>E-commerce del licor Quarter. Cuenta con playlist en Spotify.
                     Hecho con HTML, CSS Y JS.</p>
             </div>
-            <!-- <div class="proy">
-                <img src="/images/Enmascarar grupo 12@3x.png" alt="" class="proy-img">
-                <h4>Cloud Nine</h4>
-                <p>E-commerce de productos femeninos. Utilicé React JS.</p>
-            </div>
-            <div class="proy">
-                <img src="/images/Enmascarar grupo 13@3x.png" alt="" class="proy-img">
-                <h4>Re feel</h4>
-                <p>E-commerce, usé HTML, CSS, JS.</p>
-            </div> -->
         </div>
         <div class="proy-circula">
             <h3>Circula</h3>
@@ -120,73 +237,41 @@
             <img src="/images/circula.png" alt="" class="proy-img">
         </div>
         <img src="/images/bg_decoration_pink.png" alt="" class="bg-decoration--pink">
-        <!-- <img src="/images/bg_decoration_yellow.png" alt="" class="bg-decoration--yellow"> -->
-        <img src="/images/bg_decoration_green.png" alt="" class="bg-decoration--green">
-    </section>
-    <section class="about-me" id="aboutMe">
-        <img src="/images/rect_decoration.png" alt="" class="rect">
-        <img src="/images/semicircle_decoration.png" alt="" class="semicircle">
-        <img src="/images/about_me_title.png" alt="" class="about-me-title">
-        <div class="grid grid--about">
-            <p>
-                ¡Hola! Soy Abigail Rivas, tengo 20 años, soy front-end developer y estudio Lic. en Cs. de la Computación
-                en la UBA.
-
-                <br><br>
-                En cada proyecto dejo lo mejor de mí y siempre trato de aprender más y perfeccionar mi trabajo.
-
-                <br><br>
-                Mi objetivo es trabajar en un buen ambiente laboral y hacer proyectos que hagan pensar al usuario que
-                ingresa "¡Qué fácil es usar esta página y tiene un diseño increíble!".
-            </p>
-            <div class="about-me-sections">
-                <div class="competencias">
-                    <div class="competencias-header">
-                        <img src="/images/competencias_text.png" alt="" class="competencias__title">
-                        <img src="/images/star.png" alt="" class="star--small">
-                    </div>
-                    <div class="competencias-content">
-                        <div>HTML5 <span class="dot"></span> CSS3 <span class="dot"></span> JavaScript</div>
-                        <div>GIT <span class="dot"></span> Bootstrap <span class="dot"></span> C++</div>
-                        <div>Locomotive CMS <span class="dot"></span> SASS</div>
-                    </div>
-                </div>
-                <div class="en-progreso">
-                    <div class="en-progreso-header">
-                        <img src="/images/en-progreso-text.png" alt="" class="en-progreso__title">
-                        <img src="/images/star.png" alt="" class="star--small">
-                    </div>
-                    <div class="en-progreso-content">
-                        <div>JQuery <span class="dot"></span> React JS <span class="dot"></span> REST API</div>
-                        <div>Metodología Agile/Scrum </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <img src="/images/bg_decoration_yellow.png" alt="" class="bg-decoration--yellow">
+    </section> -->
 </body>
 <footer>
-    <ul class="footer-nav">
-        <a href="#home">
-            <li class="footer-nav-item">Inicio</li>
-        </a>
-        <a href="#proyectos">
-            <li class="footer-nav-item">Proyectos</li>
-        </a>
-        <a href="#aboutMe">
-            <li class="footer-nav-item">Sobre mí</li>
-        </a>
-    </ul>
-    <div class="footer-img">
-        <a href="#"><img src="/images/footer_img.png" alt="Abigail Rivas Portfolio Logo"></a>
-    </div>
-    <div class="contact">
-        <p>¿Querés hablar sobre un <br> proyecto?</p>
-        <span>lourdesrivaswork@gmail.com</span>
-        <a href="https://www.linkedin.com/in/abigail-rivas-b77526258/" class="social-media">Linkedin <i
-                class="ri-external-link-line"></i></a>
-        <a href="https://github.com/abigailrivas" class="social-media">Github <i class="ri-external-link-line"></i></a>
+    <div class="footer__container grid-3">
+        <div>
+            <p class="footer__message">This is the end! <br> See you c:</p>
+        </div>
+        <div class="footer__nav grid">
+            <ul class="footer__menu">
+                <a href="#home">
+                    <li class="footer__menu-item">Home</li>
+                </a>
+                <a href="#about-me">
+                    <li class="footer__menu-item">About Me</li>
+                </a>
+                <a href="#skills">
+                    <li class="footer__menu-item">Skills</li>
+                </a>
+            </ul>
+            <ul class="footer__menu">
+                <a href="#my-work">
+                    <li class="footer__menu-item">MY WORK</li>
+                </a>
+                <a href="#contact">
+                    <li class="footer__menu-item">Contact</li>
+                </a>
+            </ul>
+        </div>
+        <div class="footer__contact">
+            <p>+ contact</p>
+            <span>lourdes.2502@gmail.com</span>
+            <a href="https://www.linkedin.com/in/abigail-rivas-b77526258/" class="social-media">Linkedin
+        </div>
     </div>
 </footer>
-
+<script src="main.js"></script>
 </html>
