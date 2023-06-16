@@ -3,6 +3,11 @@
     src: url(C:\Users\UserW10\AppData\Local\Microsoft\Windows\Fonts\CreatoDisplay-regular.otf);
 }
 
+@font-face {
+    font-family: Kubasta;
+    src: url(C:\Users\UserW10\AppData\Local\Microsoft\Windows\Fonts\KUBASTA.TTF);
+}
+
 :root {
     /* COLORS  */
     --bg-color: #080808;
@@ -402,6 +407,7 @@ footer{
 .contact__text{
     padding: 2rem 6rem;
     text-align: center;
+    width:550px;
     line-height: 1.5rem;
 }
 
@@ -472,6 +478,14 @@ footer{
         padding: 1.5rem;
     }
 
+    section{
+        margin-bottom: 5rem;
+    }
+
+    footer{
+        position: static;
+    }
+
     h1, h2{
         font-size: 1.5rem;
     }
@@ -486,16 +500,24 @@ footer{
 
     /* HOME  */
     .home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-top: 0rem;
+        height: 100vh;
     }
 
     .home-title{
-        width: 10%;
         height: 300px;
     }
 
     .subtitle--home{
         margin-top: -6rem;
+    }
+
+    .subtitle--home h2{
+        text-align: center;
     }
 
     /* ABOUT ME  */
@@ -510,19 +532,37 @@ footer{
 
 
     /* SKILLS  */
+    .skills{
+        margin-bottom: 8rem;
+    }
+
     .skills_title{
-        width: 10%;
+        width: 100%;
     }
 
     .grid{
         display: grid;
         grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(2,1fr);
+    }
+
+    .grid--skills{
+        width: 80%;
+    }
+
+    .flex-column--start{
+        align-items: center;
     }
 
     .grid--skills .grid-3{
-        margin-top: 2rem;
+        margin-top: 3rem;
         margin-left: 0;
+        align-items: center;
+        justify-items: center;
+    }
+
+    /* MY WORK  */
+    .my-work__title{
+        margin-bottom: 2rem;
     }
 
     /* RECO */
@@ -539,6 +579,7 @@ footer{
     .comment{
         margin-top: 2rem;
         position:static;
+        width: auto;
     }
 
     .comment:nth-child(2){
@@ -568,381 +609,328 @@ footer{
     /* CONTACT  */
     .contact__text{
         padding: 2rem;
+        width: auto;
     }
 
+    .cta--contact{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+
     /* FOOTER  */
+    .footer__container{
+        padding: 0;
+    }
+
     footer .grid-3{
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,1fr);
+        gap: 3rem;
+    }
+
+    .footer__container .grid{
+        gap: 1rem;
+    }
+
+    .footer__contact{
+        align-items: start;
     }
 }
 
 
 /* ======= TABLET ========= */
 @media screen and (min-width: 768px) and (max-width: 1000px) {
-    .logo{
-        width: 70%;
-        margin-left: 6rem;
+    body{
+        padding: 1.5rem;
+        overflow-x: hidden;
     }
 
-    nav{
-        display: none;
-    }
-    
-    h1, h2{
-        font-size: 2rem;
+    header{
+        padding: 1.5rem;
     }
 
-    h3{
-        font-family: Modak;
-        font-size: 2rem;
-    }
-
-    h4{
-        font-size: 2rem;
-    }
-
-    p, span{
-        font-size: 1.3rem;
-        line-height: 2rem;
-    }
-
-    div{
-        font-size: 1.3rem;
+    section{
+        margin-bottom: 5rem;
     }
 
     footer{
-        grid-template-columns: 1fr 1fr;
-        padding: 3rem;
+        position: static;
     }
 
-    .star{
-        width: 30px;
+    h1, h2{
+        font-size: 1.5rem;
     }
 
-    .star--small{
-        width: 8%;
+    h3{
+        font-size: 1.5rem;
     }
 
-    .proyectos, .about-me{
-        padding: 3rem;
+    h4{
+        font-size: 1rem;
     }
 
     /* HOME  */
-    .home-row{
-        height: 220px;
-    }
-
-    .circle{
-        width: 100%;
-        margin-left: -2rem;
-    }
-
-    .grid--star{
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .home-semi-row--star{
+    .home{
+        display: flex;
         flex-direction: column;
-        padding: 1rem 0;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;
+        height: 100vh;
     }
 
-    .home-semi-row--text:nth-child(2){
-        padding-left: 2rem;
+    .home-title{
+        height: 300px;
     }
 
-    .home-semi-row--yellow img{
-        width: 50%;
+    .subtitle--home{
+        margin-top: -6rem;
     }
 
-    /* PROY  */
-    .proyectos h4{
-        font-size: 2rem;
+    .subtitle--home h2{
+        text-align: center;
+    }
+
+    /* ABOUT ME  */
+    .about-me{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .display-center{
+        align-items: start;
+    }
+
+
+    /* SKILLS  */
+    .skills{
+        margin-bottom: 8rem;
+    }
+
+    .skills_title{
+        width: 100%;
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .grid--skills{
+        width: 80%;
+    }
+
+    .flex-column--start{
+        align-items: center;
+    }
+
+    .grid--skills .grid-3{
+        margin-top: 3rem;
+        margin-left: 0;
+        align-items: center;
+        justify-items: center;
+    }
+
+    /* MY WORK  */
+    .my-work__title{
+        margin-bottom: 2rem;
+    }
+
+    /* RECO */
+    .recommendations{
+        position: static;
+        height: auto;
+    }
+
+    .recommendations__title{
+        margin-top: 0;
+        font-size: 4rem;
+    }
+
+    .comment{
         margin-top: 2rem;
+        position:static;
+        width: auto;
     }
 
-    .proys-header-container{
-        column-gap: 2rem;
+    .comment:nth-child(2){
+        transform: rotate(-1deg);
     }
 
-    .proys-header{
-        width: 55%;
+    .comment:nth-child(3){
+        transform: rotate(2deg);
     }
 
-    .bg-decoration--pink{
-        top: 15%;
-        height: 350px;
-        width: 100%;
+    .comment:nth-child(4){
+        transform: rotate(-1deg);
     }
 
-    .bg-decoration--yellow{
-        top: 49%;
-        height: 200px;
-        width: 100%;
+    .comment:nth-child(5){
+        transform: rotate(2deg);
     }
 
-    .bg-decoration--green{
-        top: 85%;
-        height: 350px;
-        width: 100%;
+    .comment:nth-child(6){
+        transform: rotate(-1deg);
     }
 
-    .grid--proys{
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .comment:nth-child(7){
+        transform: rotate(2deg);
     }
 
-    .proy h4{
+    /* CONTACT  */
+    .contact__text{
+        padding: 2rem;
+        width: auto;
+    }
+
+    .cta--contact{
         margin-top: 2rem;
+        margin-bottom: 4rem;
     }
 
-    .proy img{
-        width: 100%;
-    }
-
-    .proy p{
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .proy-circula img{
-        width: 100%;
-    }
-
-    /* ABOUT ME */
-    .about-me-title{
-        width: 40%;
-        margin-bottom: 0;
-    }
-
-    .about-me .rect{
-        display: none;
-    }
-
-    .about-me .semicircle{
-        display: none;
-    }
-
-    .about-me div .grid{
-        grid-template-columns: 1fr;
-    }
-
-    .competencias__title, .en-progreso__title{
-        margin-right: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .competencias__title{
-        width: 60%;
-    }
-
-    .en-progreso__title{
-        width: 60%;
-    }
-
-    .grid--about{
-        grid-template-columns: 1fr;
-    }
-
-    .dot{
-        height: 12px;
-        width: 12px;
-    }
 
     /* FOOTER  */
-    .footer-img{
-        margin-top: 1rem;
-        justify-self: left;
-        order: 2;
+    .footer__container{
+        padding: 0;
     }
 
-    .contact{
-        justify-self: left;
+    footer .grid-3{
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
-    
+
+    .footer__container .grid{
+        gap: 1rem;
+    }
+
+    .footer__contact{
+        align-items: start;
+    }
 }
 
 /* ======= DESKTOP ========= */
 @media screen and (min-width: 1350px) and (max-width: 1920px) {
-    .logo{
-        width: 25%;
+    body{
+        padding: 1.5rem;
+        overflow-x: hidden;
     }
 
-    nav ul{
-        width: 70%;
-        display: flex;
-        column-gap: 2rem;
+    header{
+        padding: 1.5rem;
     }
 
-    h1, h2{
-        text-transform: uppercase;
-        font-size: 4rem;
-    }
-
-    h3{
-        font-size: 2.5rem;
-    }
-
-    li{
-        font-size: 1.5rem;
-    }
-
-    p, span{
-        font-size: 1.8rem;
-        line-height: 3rem;
-    }
-
-    div{
-        font-size: 2rem;
+    section{
+        margin-bottom: 5rem;
     }
 
     footer{
-        grid-template-columns: repeat(3,1fr);
-        padding: 4rem;
+        position: static;
     }
 
-    .star{
-        width: 60px;
+    h1, h2{
+        font-size: 1.5rem;
     }
 
-    .star--small{
-        width: 4%;
+    h3{
+        font-size: 1.5rem;
     }
 
-    .proyectos, .about-me{
-        padding: 3rem;
+    h4{
+        font-size: 1rem;
     }
 
     /* HOME  */
-    .home-row{
+    .home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem;
+        height: 100vh;
+    }
+
+    .home-title{
         height: 300px;
     }
 
-    .circle{
-        width: 100%;
-        margin-left: -2rem;
+    .subtitle--home{
+        margin-top: -6rem;
     }
 
-    .grid--star{
-        grid-template-columns: repeat(2,1fr);
+    .subtitle--home h2{
+        text-align: center;
     }
 
-    .home-semi-row--star{
+    /* ABOUT ME  */
+    .about-me{
+        display: flex;
         flex-direction: column;
-        padding: 1rem 0;
     }
 
-    .home-semi-row--text:nth-child(2){
-        padding-left: 2rem;
+    .display-center{
+        align-items: start;
     }
 
-    .home-semi-row--yellow img{
-        width: 40%;
+
+    /* SKILLS  */
+    .skills{
+        margin-bottom: 8rem;
     }
 
-    /* PROY  */
-    .proyectos h4{
-        font-size: 2.3rem;
-        margin-top: 3rem;
-    }
-
-    .proys-header-container{
-        column-gap: 2rem;
-    }
-
-    .proys-header{
-        margin-top: 2rem;
-        width: 25%;
-    }
-
-    .bg-decoration--pink{
-        top: 10%;
-    }
-
-    .bg-decoration--yellow{
-        top: 49%;
-        height: 200px;
+    .skills_title{
         width: 100%;
     }
 
-    .bg-decoration--green{
-        top: 65%;
+    .grid--skills{
+        width: 80%;
     }
 
-    .grid--proys{
-        grid-template-columns: repeat(2,1fr);
+    .flex-column--start{
+        align-items: center;
+    }
+
+    .grid--skills .grid-3{
+        margin-top: 3rem;
+        margin-left: 0;
+        align-items: center;
+        justify-items: center;
+    }
+
+    /* MY WORK  */
+    .my-work__title{
+        margin-bottom: 2rem;
+    }
+
+    /* RECO */
+
+
+    /* CONTACT  */
+    .contact__text{
+        padding: 2rem;
+        width: auto;
+    }
+
+    .cta--contact{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+
+    /* FOOTER  */
+    .footer__container{
+        padding: 0;
+    }
+
+    footer .grid-3{
+        grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .proy h4{
-        margin-top: 2rem;
+    .footer__container .grid{
+        gap: 1rem;
     }
 
-    .proy img{
-        width: 100%;
+    .footer__contact{
+        align-items: start;
     }
-
-    .proy p{
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .proy-circula img{
-        width: 100%;
-    }
-
-    /* ABOUT ME */
-    .about-me-title{
-        width: 20%;
-        margin-bottom: 0;
-    }
-
-    .about-me .rect{
-        width: 5%;
-    }
-
-    .about-me .semicircle{
-        width: 7%;
-    }
-
-    .about-me div .grid{
-        grid-template-columns: 1fr;
-    }
-
-    .competencias__title, .en-progreso__title{
-        margin-right: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .competencias__title{
-        width: 50%;
-    }
-
-    .en-progreso__title{
-        width: 40%;
-    }
-
-    .grid--about{
-        margin-top: 2rem;
-        grid-template-columns: repeat(1fr,2);
-    }
-
-    .grid--about p{
-        width: 85%;
-    }
-
-    .dot{
-        height: 12px;
-        width: 12px;
-    }
-
-    /* FOOTER  */
-    .footer-img{
-        margin-top: 1rem;
-    }
-
-    .contact p, .contact a{
-        font-size: 1.5rem;
-    }
-    
 }
