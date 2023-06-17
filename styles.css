@@ -1054,7 +1054,7 @@ footer{
     }
 
     .comment{
-        width: 500px;
+        width: 450px;
         min-height: 150px;
     }
 
@@ -1068,8 +1068,12 @@ footer{
         left: 0;
     }
 
+    .comment:nth-child(3){
+        top: 46%;
+    }
+
     .comment:nth-child(7){
-        left: 58%;
+        left: 60%;
     }
     
     /* CONTACT  */
