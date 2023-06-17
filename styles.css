@@ -329,6 +329,14 @@ footer{
     gap: 2rem;
 }
 
+.project__btn{
+    margin-top: 3rem;
+}
+
+.project__btn a{
+    background-color: var(--bg-light);
+}
+
 .project__text p{
     line-height: 1.5rem;
 }
@@ -648,6 +656,12 @@ footer{
         order: 1;
     }
 
+    .project__btn{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
     .project__image-container{
         margin-top: 2rem;
         padding: 0;
@@ -808,6 +822,11 @@ footer{
         order: 1;
     }
 
+    .project__btn{
+        display: flex;
+        justify-content: center;
+    }
+
     .project__image-container{
         margin-top: 2rem;
         padding: 0;
@@ -906,6 +925,10 @@ footer{
     }
 
     .text-emphasis{
+        font-size: 4rem;
+    }
+
+    .cta{
         font-size: 4rem;
     }
 
@@ -1013,6 +1036,11 @@ footer{
         margin-bottom: 4rem;
     }
 
+    .project__btn{
+        display: flex;
+        justify-content: center;
+    }
+    
     .project__tools{
         display: flex;
         flex-direction: row;
@@ -1021,8 +1049,8 @@ footer{
     
     .project__tools .block{
         margin-top: 2rem;
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
     }
     
 
@@ -1077,7 +1105,6 @@ footer{
     .cta--contact{
         margin-top: 8rem;
         margin-bottom: 4rem;
-        font-size: 4rem;
         padding: 1rem 3rem;
     }
 
