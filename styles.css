@@ -906,9 +906,7 @@ footer{
         padding: 6rem;
     }
 
-    header{
-        padding: 4rem 6rem;
-    }
+
 
     h1, h2{
         font-size: 3rem;
@@ -1025,11 +1023,7 @@ footer{
         margin-bottom: 4rem;
     }
 
-    .project__btn{
-        display: flex;
-        justify-content: center;
-    }
-    
+
     .project__tools{
         display: flex;
         flex-direction: row;
