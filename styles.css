@@ -901,27 +901,25 @@ footer{
 }
 
 /* ======= DESKTOP ========= */
-@media screen and (min-width: 1350px) and (max-width: 1920px) {
+@media screen and (min-width: 1350px) and (max-width: 1930px) {
     body{
-        padding: 10rem;
-        overflow-x: hidden;
+        padding: 6rem;
     }
 
     header{
-        padding: 4rem 10rem;
+        padding: 4rem 6rem;
     }
 
-
     h1, h2{
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     h3{
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     span, p{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .text-emphasis{
@@ -984,20 +982,19 @@ footer{
         margin-bottom: 120px;
     }
 
-    .grid--skills{
-        width: 80%;
-    }
+
 
     .grid--skills .grid-3{
         margin-left: 0;
         align-items: center;
         justify-items: center;
-        height: 250px;
+        height: 300px;
+        width: 400px;
     }
 
     .block{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
 
@@ -1015,19 +1012,11 @@ footer{
         line-height: 3.5rem;
     }
 
-    .project__showcase{
-        display: flex;
-        flex-direction: column;
-    }
-
     .project__text{
-        order: 1;
-        gap: 5rem;
+        gap: 3rem;
     }
 
     .project__image-container{
-        margin-top: 4rem;
-        padding: 0;
         gap: 5rem;
     }
 
@@ -1049,8 +1038,8 @@ footer{
     
     .project__tools .block{
         margin-top: 2rem;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     
 
@@ -1068,11 +1057,13 @@ footer{
 
     .comment{
         width: 500px;
+        min-height: 150px;
     }
 
     .comment::before, .comment--light::before{
         width: 40px;
         height: 40px;
+        left: 86%;
     }
 
     .comment:nth-child(2){
@@ -1089,11 +1080,12 @@ footer{
     }
 
     .contact__title{
-        font-size: 4rem;
+        font-size: 5rem;
+        margin-bottom: 6rem;
     }
 
     .contact__trade-title{
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .contact__text{
