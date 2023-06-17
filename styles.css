@@ -904,6 +904,7 @@ footer{
 @media screen and (min-width: 1350px) and (max-width: 1930px) {
     body{
         padding: 6rem;
+        overflow-x: hidden;
     }
 
 
