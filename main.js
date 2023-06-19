@@ -21,3 +21,21 @@ menuItem.forEach((item) => {
     })
 })
 
+// SCROLL REVEAL 
+ScrollReveal().reveal('.home-title');
+ScrollReveal().reveal('.subtitle--home', {delay: 200});
+
+ScrollReveal().reveal('.about-me-first');
+ScrollReveal().reveal('.about-me-second', {delay: 800});
+
+ScrollReveal().reveal('.skills_title');
+
+ScrollReveal().reveal('.my-work__title');
+
+ScrollReveal().reveal('.comment', {delay: 200});
+
+ScrollReveal().reveal('.cta', {delay: 200});
+
+
+
+
