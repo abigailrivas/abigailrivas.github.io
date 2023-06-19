@@ -903,30 +903,28 @@ footer{
 /* ======= DESKTOP ========= */
 @media screen and (min-width: 1350px) and (max-width: 1930px) {
     body{
-        padding: 6rem;
+        padding: 4rem;
         overflow-x: hidden;
     }
-
-
 
     h1, h2{
         font-size: 3rem;
     }
 
     h3{
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
 
     span, p{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .text-emphasis{
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .text-emphasis--italic{
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .cta{
@@ -957,7 +955,7 @@ footer{
     }
 
     .subtitle--home{
-        margin-top: -2rem;
+        margin-top: -6rem;
     }
 
     .subtitle--home h2{
@@ -967,8 +965,8 @@ footer{
     /* ABOUT ME  */
     .about-me_text{
         width: 500px;
-        font-size: 2.5rem;
-        line-height: 4rem;
+        font-size: 2rem;
+        line-height: 3rem;
     }
 
     /* SKILLS  */
@@ -985,6 +983,9 @@ footer{
         margin-bottom: 120px;
     }
 
+    .grid--skills{
+        width: 70%;
+    }
 
 
     .grid--skills .grid-3{
@@ -1008,11 +1009,11 @@ footer{
     }
 
     .project__subtitle{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .project__text p{
-        line-height: 3.5rem;
+        line-height: 3rem;
     }
 
     .project__text{
@@ -1030,9 +1031,10 @@ footer{
 
 
     .project__tools{
-        display: flex;
-        flex-direction: row;
-        gap: 3rem;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap: 1rem;
+        width: 80%;
     }
     
     .project__tools .block{
@@ -1055,14 +1057,14 @@ footer{
     }
 
     .comment{
-        width: 450px;
-        min-height: 150px;
+        width: 30%;
+        min-height: 24%;
     }
 
     .comment::before, .comment--light::before{
         width: 40px;
         height: 40px;
-        left: 86%;
+        left: 88%;
     }
 
     .comment:nth-child(2){
@@ -1097,6 +1099,10 @@ footer{
         line-height: 3rem;
     }
 
+    .contact .grid{
+        width: 70%;
+    }
+
     .cta--contact{
         margin-top: 8rem;
         margin-bottom: 4rem;
@@ -1110,7 +1116,7 @@ footer{
     }
 
     .footer__container{
-        padding: 2rem 10rem;
+        padding: 2rem 4rem;
     }
 
     .footer__message{
