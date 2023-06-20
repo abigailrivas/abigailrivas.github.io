@@ -985,7 +985,7 @@ footer{
     }
 
     .menu-item img{
-        height: 100px;
+        height: 70px;
     }
 
     /* HOME  */
@@ -1132,7 +1132,7 @@ footer{
     }
 
     .contact__text{
-        padding: 2rem;
+        padding: 4rem;
         width: auto;
         line-height: 3rem;
     }
