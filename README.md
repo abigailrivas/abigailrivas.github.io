@@ -1,60 +1,57 @@
 # Kimi tejidos ✿ tienda online
 
-Tienda estilo scrapbook (pastel, letra a mano, cintas washi, polaroids) que lee los productos desde una **Google Sheet** y recibe los pedidos por **WhatsApp**.
+Tienda estilo scrapbook (pastel, letra a mano, cintas washi, polaroids) con los productos cargados en `src/products.js` y que recibe los pedidos por **WhatsApp**.
 
 ## Correr en local
 
 ```bash
 npm install
-cp .env.example .env   # completá los valores
+cp .env.example .env   # número de WhatsApp y redes
 npm run dev
 ```
 
-Sin `.env` la tienda muestra productos de ejemplo.
+## Cargar productos
 
-## 1. Armar la planilla
+Los productos están en `src/products.js`, un array con un objeto por producto:
 
-1. Creá una Google Sheet y renombrá la primera hoja a **Productos**.
-2. Importá `productos-ejemplo.csv` (Archivo → Importar). Son los 20 productos reales de la tienda de Empretienda, con sus fotos. O copiá estos encabezados en la fila 1:
+```js
+{
+  id: '15',
+  name: 'Tapiz gatito',
+  description: `Alto: 16cm aprox.
+Ancho: 16cm aprox.`,              // opcional
+  price: 8000,
+  category: 'Decoración',          // genera el menú y los filtros solos
+  images: ['https://…/1.jpg', 'https://…/2.jpg'], // la primera es la portada
+  featured: true,                  // opcional: primero en «Los más vendidos»
+  variants: {                      // opcional
+    name: 'Color',
+    values: [
+      { name: 'Rosa y marrón', photos: ['https://…/rosa.jpg'] }, // con fotos, la galería muestra esas al elegirla
+      { name: 'Celeste y blanco', photos: [] },
+    ],
+  },
+  emoji: '🐱',                     // se usa cuando no hay foto
+}
+```
 
-| columna | qué va | ejemplo |
-|---|---|---|
-| `id` | identificador único | `1` |
-| `nombre` | nombre del producto | `Conejita Mimí` |
-| `descripcion` | texto libre | `Mide 22 cm` |
-| `precio` | número, con o sin puntos | `18.500` |
-| `categoria` | genera los filtros solos | `Amigurumis` |
-| `imagen` | URL(s) separadas por `\|`. Sirven links de Google Drive compartidos | `https://drive.google.com/file/d/…` |
-| `stock` | cantidad. `0` = agotado, vacío = sin límite | `5` |
-| `destacado` | `si` muestra el sticker «¡favorito!» | `si` |
-| `opcion` | nombre de la variante (opcional) | `Color`, `Con llavero` |
-| `opciones` | valores separados por `\|` | `Rosa y marrón\|Celeste y blanco` |
-| `emoji` | se usa cuando no hay foto | `🐰` |
+La aclaración «Todas las piezas… son hechas a mano…» la agrega sola la página del producto.
 
-Opcional: una columna `visible` con `no` oculta el producto sin borrarlo.
+## Publicar
 
-3. **Compartir → Cualquier persona con el enlace → Lector** (la API key solo puede leer planillas públicas).
-4. Si usás fotos de Drive, compartilas también como «cualquier persona con el enlace».
-
-## 2. API key de Google Sheets
-
-1. Entrá a [console.cloud.google.com](https://console.cloud.google.com), creá un proyecto.
-2. *APIs y servicios → Biblioteca* → habilitá **Google Sheets API**.
-3. *Credenciales → Crear credenciales → Clave de API*.
-4. Restringila: *Restricciones de API* → solo Google Sheets API, y *Referentes HTTP* → tu dominio (y `localhost:5173/*` para desarrollo).
-5. Pegá la clave en `VITE_SHEETS_API_KEY` y el ID de la planilla en `VITE_SHEET_ID`.
-
-Los cambios en la planilla se ven al recargar la página, sin redeploy.
-
-## 3. Publicar
-
-`npm run build` genera `dist/`, un sitio estático. Subilo a Netlify, Vercel o Cloudflare Pages y cargá las mismas variables `VITE_*` en el panel del hosting.
+`npm run build` genera `dist/`, un sitio estático. Subilo a Netlify, Vercel o Cloudflare Pages y cargá las variables `VITE_*` de `.env` en el panel del hosting.
 
 ## Estructura
 
-- `index.html`: secciones, stickers y doodles SVG
-- `src/sheets.js`: lectura de Google Sheets API v4 y normalización de filas
-- `src/cart.js`: carrito persistido en `localStorage`
-- `src/main.js`: render, filtros, modal, checkout por WhatsApp
+Vite + React + React Router. Rutas: `/` (inicio) y `/productos` (tienda, filtra con `?categoria=`).
+
+- `index.html`: `<head>` y los íconos SVG compartidos (`<symbol>`), incluido el punto cruz del hero
+- `src/App.jsx`: rutas y layout (header, footer, modal de producto, carrito, toast)
+- `src/pages/`: `Home.jsx` (hero, más vendidos, categorías, cómo comprar) y `Shop.jsx`
+- `src/components/`: tarjeta de producto, header con menú de categorías, modal, carrito, footer
+- `src/context/`: productos (con su URL) y categorías, y estado de UI (carrito abierto, toast)
+- `src/products.js`: los productos (y los valores por defecto de los campos opcionales)
+- `src/cart.js` + `src/hooks/useCart.js`: carrito persistido en `localStorage`
 - `src/style.css`: todo el estilo scrapbook
 - `public/cursor*.svg`: cursor con lacito (normal y para links/botones)
+- `public/_redirects` / `vercel.json`: hacen que `/productos` funcione al abrirlo directo en Netlify o Vercel

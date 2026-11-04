@@ -1,50 +1,49 @@
-const KEY = 'kimi-cart-v1';
+// v2: los items guardan variant/variantName (antes color/optionLabel)
+// v3: suba de precios; los items guardan el precio, así que los carritos viejos no sirven
+const KEY = 'kimi-cart-v3';
 const listeners = new Set();
 
-let items = load();
-
-function load() {
+const load = () => {
   try {
     const parsed = JSON.parse(localStorage.getItem(KEY) || '[]');
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];
   }
-}
+};
 
-function save() {
+let items = load();
+
+// every change creates a new array so React (useSyncExternalStore) sees it
+const commit = (next) => {
+  items = next;
   try {
     localStorage.setItem(KEY, JSON.stringify(items));
   } catch {
     /* private mode: cart just won't persist */
   }
   listeners.forEach((fn) => fn());
-}
+};
 
 export const cart = {
   items: () => items,
-  total: () => items.reduce((sum, it) => sum + it.price * it.qty, 0),
-  subscribe: (fn) => listeners.add(fn),
 
-  // returns false when stock would be exceeded
-  add(product, stock = Infinity) {
-    const key = `${product.id}::${product.color}`;
-    const inCart = items.filter((it) => it.id === product.id).reduce((n, it) => n + it.qty, 0);
-    if (inCart >= stock) return false;
-    const found = items.find((it) => it.key === key);
-    if (found) found.qty += 1;
-    else items = [...items, { ...product, key, qty: 1 }];
-    save();
-    return true;
+  subscribe: (fn) => {
+    listeners.add(fn);
+    return () => listeners.delete(fn);
   },
 
-  change(key, delta, stock = Infinity) {
+  add: (product) => {
+    const key = `${product.id}::${product.variant}`;
+    const found = items.some((it) => it.key === key);
+    commit(found ? items.map((it) => (it.key === key ? { ...it, qty: it.qty + 1 } : it)) : [...items, { ...product, key, qty: 1 }]);
+  },
+
+  change: (key, delta) => {
     const it = items.find((x) => x.key === key);
     if (!it) return;
-    const inCart = items.filter((x) => x.id === it.id).reduce((n, x) => n + x.qty, 0);
-    if (delta > 0 && inCart >= stock) return;
-    it.qty += delta;
-    if (it.qty <= 0) items = items.filter((x) => x.key !== key);
-    save();
+    commit(items.map((x) => (x.key === key ? { ...x, qty: x.qty + delta } : x)).filter((x) => x.qty > 0));
   },
+
+  remove: (key) => commit(items.filter((x) => x.key !== key)),
 };
