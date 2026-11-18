@@ -1074,6 +1074,49 @@ main > .hero {
   border-radius: 12px;
 }
 
+.pd__carousel {
+  position: relative;
+}
+
+.pd__track {
+  display: flex;
+  /* pd__photo centra el contenido; acá cada slide tiene que ocupar todo el alto */
+  align-items: stretch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.pd__track::-webkit-scrollbar {
+  display: none;
+}
+
+.pd__slide {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.pd__arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  translate: 0 -50%;
+}
+
+.pd__arrow:hover {
+  transform: none;
+}
+
+.pd__arrow--prev {
+  left: 0.6rem;
+}
+
+.pd__arrow--next {
+  right: 0.6rem;
+}
+
 /* absoluta para que la foto entre entera sin importar su proporción */
 .pd__photo img {
   position: absolute;
@@ -1104,12 +1147,32 @@ main > .hero {
   opacity: 0.85;
 }
 
-/* foto que se está viendo */
+/* foto que se está viendo: mismo anillo y tilde que la opción elegida de una variante */
+.thumbs button {
+  position: relative;
+}
+
 .thumbs button[aria-current='true'] {
   opacity: 1;
-  border-color: var(--pink-deep);
-  box-shadow: 0 0 0 3px var(--pink);
-  transform: translateY(-3px);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ink);
+}
+
+.thumbs button[aria-current='true']::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .thumbs img {
@@ -1155,6 +1218,11 @@ main > .hero {
   width: 100%;
 }
 
+.colors__chosen {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
 .colors label span {
   display: inline-block;
   padding: 0 0.8rem;
@@ -1174,6 +1242,45 @@ main > .hero {
   box-shadow: 2px 2px 0 var(--ink);
 }
 
+.colors label .swatch {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border-radius: 8px;
+}
+
+.colors label .swatch--none,
+.colors input:checked + .swatch--none,
+.mini-swatch--none {
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    var(--error) calc(50% - 1px),
+    var(--error) calc(50% + 1px),
+    transparent calc(50% + 1px)
+  ), #fff;
+}
+
+.colors input:checked + .swatch {
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ink);
+}
+
+/* tilde en un circulito propio para que se lea sobre cualquier color, incluso blanco */
+.colors input:checked + .swatch::after {
+  content: '✓';
+  display: grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: calc((2.2rem - 4px - 1.1rem) / 2) auto 0;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .colors input:focus-visible + span {
   outline: 3px dashed var(--pink-deep);
   outline-offset: 2px;
@@ -1181,6 +1288,7 @@ main > .hero {
 
 .desc {
   white-space: pre-line;
+  font-size: 16px;
 }
 
 .pd__info .desc-note {
@@ -1292,6 +1400,21 @@ main > .hero {
 
 .line__info small {
   color: var(--ink-soft);
+}
+
+.line__variant {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* cajita chiquita del color elegido, como las del selector de variantes */
+.mini-swatch {
+  flex-shrink: 0;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
 }
 
 .qty {

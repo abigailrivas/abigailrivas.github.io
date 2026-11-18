@@ -1,16 +1,7 @@
-import { slugify } from '../lib/format.js';
 import { products as rawProducts } from '../products.js';
 
-// index drives each product's pastel color and tilt; slug is its URL (with the id appended if two names collide)
-const withMeta = (products) => {
-  const seen = new Set();
-  return products.map((p, index) => {
-    let slug = slugify(p.name) || p.id;
-    if (seen.has(slug)) slug = `${slug}-${p.id}`;
-    seen.add(slug);
-    return { ...p, index, slug };
-  });
-};
+// index drives each product's pastel color and tilt
+const withMeta = (products) => products.map((p, index) => ({ ...p, index }));
 
 const PRODUCTS = withMeta(rawProducts);
 

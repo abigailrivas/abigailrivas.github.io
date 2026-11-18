@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { Chevron } from '../components/Chevron.jsx';
 import { useProducts } from '../context/ProductsContext.jsx';
 import { useAddToCart } from '../hooks/useCart.js';
-import { SHOP_PATH, categoryUrl, money, tone } from '../lib/format.js';
+import { SHOP_PATH, categoryUrl, money, priceFor, tone } from '../lib/format.js';
 
 // va en todos los productos, en letra chica, después de la descripción propia (si tiene)
 const DISCLAIMER =
-  'Todas las piezas de esta tienda son hechas a mano con mucho cariño para vos 💖, por lo tanto pueden tener ligeras variaciones en imagen y tamaño.';
+  'Todas las piezas de esta tienda son hechas a mano con mucho cariño para vos 💖, por lo tanto pueden tener ligeras variaciones en imagen y tamaño. Los productos pueden tardar hasta 7 días en ser enviados.';
 
 const Description = ({ text }) => (
   <>
@@ -15,31 +16,68 @@ const Description = ({ text }) => (
   </>
 );
 
+// carrusel: se desliza con el dedo/trackpad, y flechas, miniaturas y teclado llevan a cada foto.
+// la foto actual sale de la posición del scroll, así queda bien también al deslizar
 const Gallery = ({ product: p, photos }) => {
+  const track = useRef(null);
   const [index, setIndex] = useState(0);
   const count = photos.length;
+
+  const goTo = (k) => {
+    const el = track.current;
+    el.scrollTo({ left: ((k + count) % count) * el.clientWidth, behavior: 'smooth' });
+  };
+  const onScroll = () => setIndex(Math.round(track.current.scrollLeft / track.current.clientWidth));
 
   // flechas del teclado para recorrer las fotos (salvo que estés escribiendo o eligiendo una opción)
   useEffect(() => {
     if (count < 2) return;
     const onKey = (e) => {
       if (e.target.closest?.('input, textarea')) return;
-      if (e.key === 'ArrowRight') setIndex((k) => (k + 1) % count);
-      if (e.key === 'ArrowLeft') setIndex((k) => (k - 1 + count) % count);
+      const el = track.current;
+      const current = Math.round(el.scrollLeft / el.clientWidth);
+      const next = e.key === 'ArrowRight' ? current + 1 : e.key === 'ArrowLeft' ? current - 1 : null;
+      if (next !== null) el.scrollTo({ left: ((next + count) % count) * el.clientWidth, behavior: 'smooth' });
     };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [count]);
 
+  if (!count) {
+    return (
+      <div className="pd__media">
+        <div className={`pd__photo ph ph--${tone(p.index)}`}>
+          <span>{p.emoji}</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="pd__media">
-      <div className={`pd__photo ${count ? '' : `ph ph--${tone(p.index)}`}`}>
-        {count ? <img src={photos[index]} alt={p.name} /> : <span>{p.emoji}</span>}
+      <div className="pd__carousel">
+        <div className="pd__photo pd__track" ref={track} onScroll={onScroll}>
+          {photos.map((src, k) => (
+            <div className="pd__slide" key={src}>
+              <img src={src} alt={`${p.name}, foto ${k + 1} de ${count}`} loading={k ? 'lazy' : undefined} />
+            </div>
+          ))}
+        </div>
+        {count > 1 && (
+          <>
+            <button className="icon-btn pd__arrow pd__arrow--prev" onClick={() => goTo(index - 1)} aria-label="Foto anterior">
+              <Chevron dir={-1} />
+            </button>
+            <button className="icon-btn pd__arrow pd__arrow--next" onClick={() => goTo(index + 1)} aria-label="Foto siguiente">
+              <Chevron dir={1} />
+            </button>
+          </>
+        )}
       </div>
       {count > 1 && (
         <div className="thumbs">
           {photos.map((src, k) => (
-            <button key={src} onClick={() => setIndex(k)} aria-label={`Foto ${k + 1}`} aria-current={k === index}>
+            <button key={src} onClick={() => goTo(k)} aria-label={`Foto ${k + 1}`} aria-current={k === index}>
               <img src={src} alt="" />
             </button>
           ))}
@@ -49,43 +87,68 @@ const Gallery = ({ product: p, photos }) => {
   );
 };
 
-const ProductInfo = ({ product: p, variant, setVariant }) => {
+const ProductInfo = ({ product: p, chosen, setChosen }) => {
   const addToCart = useAddToCart();
 
   return (
     <div className="pd__info">
       <h1 className="h-script">{p.name}</h1>
-      <p className="price price--big">{money.format(p.price)}</p>
+      <p className="price price--big">{money.format(priceFor(p, chosen))}</p>
       <Description text={p.description} />
-      {p.variants && (
-        <fieldset className="colors">
-          <legend>{p.variants.name}</legend>
-          {p.variants.values.map(({ name }) => (
-            <label key={name}>
-              <input type="radio" name="variant" value={name} checked={variant === name} onChange={() => setVariant(name)} />
-              <span>{name}</span>
+      {p.variants.map((group) => (
+        <fieldset className="colors" key={group.name}>
+          <legend>
+            {group.name}: <span className="colors__chosen">{chosen[group.name]}</span>
+          </legend>
+          {group.values.map(({ name, color, extra }) => (
+            <label key={name} title={group.values.some((v) => v.color) ? name : undefined}>
+              <input
+                type="radio"
+                name={group.name}
+                value={name}
+                checked={chosen[group.name] === name}
+                onChange={() => setChosen((c) => ({ ...c, [group.name]: name }))}
+              />
+              {/* si el selector es de colores, la opción sin color (Sin moño...) va como cajita tachada */}
+              {group.values.some((v) => v.color) ? (
+                <span className={`swatch ${color ? '' : 'swatch--none'}`} style={color ? { background: color } : undefined}>
+                  <span className="sr-only">{name}</span>
+                </span>
+              ) : (
+                <span>
+                  {name}
+                  {extra ? ` (+${money.format(extra)})` : ''}
+                </span>
+              )}
             </label>
           ))}
         </fieldset>
-      )}
-      <button className="btn btn--pink btn--block" disabled={p.unavailable} onClick={() => addToCart(p, variant)}>
+      ))}
+      <button className="btn btn--pink btn--block" disabled={p.unavailable} onClick={() => addToCart(p, chosen)}>
         {p.unavailable ? 'Sin stock' : 'Sumar al carrito'}
       </button>
     </div>
   );
 };
 
-// la variante elegida vive acá porque la usan las dos columnas: la info la elige y la galería muestra sus fotos
+// las variantes elegidas viven acá porque las usan las dos columnas: la info las elige y la galería muestra sus fotos
 const ProductDetail = ({ product: p }) => {
-  const [variant, setVariant] = useState(p.variants?.values[0]?.name || '');
-  const chosen = p.variants?.values.find((v) => v.name === variant);
-  const photos = chosen?.photos.length ? chosen.photos : p.images;
+  const [picked, setChosen] = useState({});
+  // lo que no se eligió (o ya no existe en el producto) va con la primera opción de su selector
+  const chosen = Object.fromEntries(
+    p.variants.map((g) => [g.name, g.values.some((v) => v.name === picked[g.name]) ? picked[g.name] : g.values[0].name])
+  );
+  // la galería usa las fotos de la primera opción elegida que tenga fotos propias
+  const withPhotos = p.variants
+    .map((g) => g.values.find((v) => v.name === chosen[g.name]))
+    .find((v) => v?.photos.length);
+  const photos = withPhotos ? withPhotos.photos : p.images;
 
   return (
     <div className="pd">
-      {/* key: al cambiar de variante la galería vuelve a la primera foto */}
-      <Gallery key={variant} product={p} photos={photos} />
-      <ProductInfo product={p} variant={variant} setVariant={setVariant} />
+      {/* key: al cambiar de fotos la galería vuelve a la primera */}
+      <Gallery key={photos.join()} product={p} photos={photos} />
+      <ProductInfo product={p} chosen={chosen} setChosen={setChosen} />
     </div>
   );
 };
@@ -100,9 +163,9 @@ const Message = ({ title, children }) => (
 );
 
 export const Product = () => {
-  const { slug } = useParams();
+  const { id } = useParams();
   const { products } = useProducts();
-  const product = products.find((p) => p.slug === slug);
+  const product = products.find((p) => p.id === id);
 
   useEffect(() => {
     if (!product) return;

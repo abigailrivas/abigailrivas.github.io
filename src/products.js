@@ -1,7 +1,7 @@
 // Productos reales de kimicrochet.empretienda.com.ar, cargados a mano.
 //
 // Cada producto es un objeto con:
-//   id          identificador único (también desempata URLs si dos productos se llaman igual)
+//   id          identificador único; también es su URL (/productos/2)
 //   name        nombre que se muestra en la card y en la página del producto
 //   description texto propio del producto (opcional). La aclaración de "hecho a mano" la agrega
 //               la página del producto, no hace falta repetirla acá
@@ -10,10 +10,12 @@
 //   images      URLs de las fotos; la primera es la portada
 //   featured    true para que aparezca primero en "Los más vendidos" (opcional)
 //   unavailable true para mostrarlo como "Sin stock" y que no se pueda sumar al carrito (opcional)
-//   variants    selector de variantes (opcional):
+//   variants    lista de selectores de variantes (opcional); cada uno con:
 //                 name    título del selector (Color, Con llavero...)
 //                 values  cada opción con su name y sus photos; si una opción tiene fotos,
-//                         la galería muestra esas al elegirla (si no, las de images)
+//                         la galería muestra esas al elegirla (si no, las de images).
+//                         Con color (ej. '#78412c') la opción se muestra como una cajita de ese color.
+//                         Con extra (ej. 200) elegirla suma eso al precio
 //   emoji       se muestra en lugar de la foto si no hay imagen
 const PRODUCTS = [
   {
@@ -23,82 +25,120 @@ const PRODUCTS = [
 Medidas
 Alto: 7cm aprox.
 Ancho: 7cm aprox.`,
-    price: 4950,
+    price: 3500,
     category: "Amigurumis",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/5647beb81a3c9e183f2f7c787984bfdbb93a4874a5ab0308f04b44dccdfb9011423370.jpg",
-      "https://d22fxaf9t8d39k.cloudfront.net/dc836c46b21fc23515f995863b05948850e9bd8c01b93d40130094e7762dd775423370.jpg",
+      "https://d22fxaf9t8d39k.cloudfront.net/dc836c46b21fc23515f995863b05948850e9bd8c01b93d40120094e7762dd775423370.jpg",
     ],
-    variants: {
-      name: "Con llavero",
-      values: [
-        { name: "Si", photos: [] },
-        { name: "No", photos: [] },
-      ],
-    },
+    variants: [
+      {
+        name: "Con llavero",
+        values: [
+          { name: "No", photos: [] },
+          { name: "Sí", extra: 200, photos: [] },
+        ],
+      },
+      {
+        name: "Color",
+        values: [
+          {
+            name: "Chocolate",
+            color: "#78412c",
+            photos: [],
+          },
+          { name: "Caramelo", color: "#C26C0F", photos: [] },
+          { name: "Naranja", color: "#d75113ff", photos: [] },
+        ],
+      },
+    ],
     emoji: "🐒",
   },
   {
     id: "2",
-    name: "Osito chocolate",
-    description: `Medidas
+    name: "Osito con bufanda",
+    description: `Material:
+    Hilo de algodón.
+    Medidas:
 Alto: 10cm aprox.
 Ancho: 11cm aprox.`,
-    price: 15950,
+    price: 13500,
     category: "Amigurumis",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/2ed5beba241e04f20984598629cd54df55563453d63aaf2494fae8e0bf31bd71423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/579df3946e11773331c968b92f57581257aaa33ef6155d257f33181202820917423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/bfad7289ad63d254a8eb644bf51318f668759d5e81b9c346c8137b2c3d7c3f65423370.jpg",
-    ],
-    emoji: "🧸",
-  },
-  {
-    id: "3",
-    name: "Osito strawberry",
-    description: `Medidas
-Alto: 10cm aprox.
-Ancho: 11cm aprox.`,
-    price: 15950,
-    category: "Amigurumis",
-    images: [
       "https://d22fxaf9t8d39k.cloudfront.net/42f7a9dccd500f38ff444f182ecb14ac54ba301ce54370dce26177656546575a423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/dcf7f2ed3f3ff3cc01e741cf3b6662543bf8f5d05710e091d00938e456365ac3423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/f223767ff5ecb99e457925688e1192ead1691d5da1ea4855aa4f4059b1cbb470423370.jpg",
     ],
-    emoji: "🍓",
+    variants: [
+      {
+        name: "Color del osito",
+        values: [
+          {
+            name: "Chocolate",
+            color: "#78412c",
+            photos: [
+              "https://d22fxaf9t8d39k.cloudfront.net/2ed5beba241e04f20984598629cd54df55563453d63aaf2494fae8e0bf31bd71423370.jpg",
+              "https://d22fxaf9t8d39k.cloudfront.net/579df3946e11773331c968b92f57581257aaa33ef6155d257f33181202820917423370.jpg",
+              "https://d22fxaf9t8d39k.cloudfront.net/bfad7289ad63d254a8eb644bf51318f668759d5e81b9c346c8137b2c3d7c3f65423370.jpg",
+            ],
+          },
+          { name: "Caramelo", color: "#C26C0F", photos: [] },
+          { name: "Blanco", color: "#FFFFFF", photos: [] },
+          { name: "Frutilla", color: "#FFCCD3", photos: [] },
+        ],
+      },
+      {
+        name: "Color de bufanda",
+        values: [
+          { name: "Frutilla", color: "#FFCCD3", photos: [] },
+          { name: "Blanco", color: "#FFFFFF", photos: [] },
+          { name: "Manteca", color: "#FFF1A8", photos: [] },
+          { name: "Caramelo", color: "#C26C0F", photos: [] },
+          { name: "Chocolate", color: "#78412c", photos: [] },
+          { name: "Celeste", color: "#A9D8F5", photos: [] },
+          { name: "Verde musgo", color: "#6B7A3A", photos: [] },
+          { name: "Sin bufanda", photos: [] },
+        ],
+      },
+      {
+        name: "Color de moño",
+        values: [
+          { name: "Frutilla", color: "#FFCCD3", photos: [] },
+          { name: "Blanco", color: "#FFFFFF", photos: [] },
+          { name: "Manteca", color: "#FFF1A8", photos: [] },
+          { name: "Caramelo", color: "#C26C0F", photos: [] },
+          { name: "Chocolate", color: "#78412c", photos: [] },
+          { name: "Celeste", color: "#A9D8F5", photos: [] },
+          { name: "Verde musgo", color: "#6B7A3A", photos: [] },
+          { name: "Sin moño", photos: [] },
+        ],
+      },
+      {
+        name: "Con llavero",
+        values: [
+          { name: "No", photos: [] },
+          { name: "Sí", extra: 200, photos: [] },
+        ],
+      },
+    ],
+    emoji: "🧸",
   },
   {
     id: "4",
-    name: "Plushie bunny frutillita",
-    description: `Conejito súper cute con jardinero rosa y vincha pastel, con relleno de vellón.
-*ACLARACIÓN* 🚫 La vestimenta NO es removible.
-Medidas
-Alto: 16cm aprox.
-Ancho: 10cm aprox.
-¿No sabés como cuidarlo? En nuestras historias destacadas tenemos una guía 😄.`,
-    price: 28098,
-    category: "Amigurumis",
-    images: [
-      "https://d22fxaf9t8d39k.cloudfront.net/dd9d04449d429e0974a6870f96ba1b7da2e1d19267b2da25a5290d075124f939423370.jpg",
-      "https://d22fxaf9t8d39k.cloudfront.net/52397663d061042f88b1a33af770efe903ab8d7f267876aa988a9a6fb1dfa192423370.jpg",
-    ],
-    emoji: "🐰",
-  },
-  {
-    id: "5",
-    name: "Plushie bunny tomatito",
+    name: "Conejo tomatito",
     description: `Conejito súper cute con jardinero celeste y vincha de tomatito, con relleno de vellón.
 *ACLARACIÓN* 🚫 La vestimenta NO es removible.
 Medidas
 Alto: 16cm aprox.
 Ancho: 10cm aprox.
-¿No sabés como cuidarlo? En nuestras historias destacadas tenemos una guía 😄.`,
-    price: 28098,
+`,
+    price: 16200,
     category: "Amigurumis",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/2c806fb5bf6c67ad4b70e9cee603fa961402ada65d0689b12bca2ab878f5dfea423370.jpg",
-      "https://d22fxaf9t8d39k.cloudfront.net/62b215c6bda0175a26354e7aefc2230e4a3388a999761dfd824cc9058d556f70423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/8b178e84e66171a7d9de22c54bd43605db194f5cfcdcbfcee936bfba60079130423370.jpg",
     ],
     emoji: "🍅",
@@ -136,8 +176,7 @@ Largo: 12cm aproximadamente`,
     name: "Colgante de botones",
     description: `Colgante de 3 botones hecho con hilo de algodón
 Largo: 40cm aprox
-Ancho: 16cm
-Los productos pueden tardar hasta 7 días en ser enviados`,
+Ancho: 16cm`,
     price: 37950,
     category: "Decoración",
     images: [
@@ -166,7 +205,7 @@ Largo: 100cm aprox.`,
     price: 15081,
     category: "Decoración",
     images: [
-      "https://d22fxaf9t8d39k.cloudfront.net/6af237c112af117468f591128ff6473ba128e96a475b5ae888f1a0f583953300423370.jpg",
+      "https://d22fxaf9t8d39k.cloudfront.net/6af237c112af117468f591128ff6473ba128e96a475b5ae888f1a0f583953200423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/8748d4c00b8becf100930836b2f014ecc3ce7c1c806e7e8cbae3e56946ac5929423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/c57f77621ab55496afe9e32c61a10ffec20d60610d607fc21207a8ca97eaaffd423370.jpg",
     ],
@@ -189,7 +228,7 @@ Largo: 100cm aprox.`,
     description: `Medidas
 Ancho: 12cm aproximadamente
 Largo: 15cm aproximadamente`,
-    price: 5500,
+    price: 6000,
     category: "Decoración",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/438453a342d3ef6816186f99d16f660fcd0f6b0194b8d3e69d63013bd6ff71c5423370.jpg",
@@ -229,13 +268,15 @@ Ancho: 16cm aprox`,
       "https://d22fxaf9t8d39k.cloudfront.net/39ca1000d17152f3f3aec22cb5f08e2964bf8a6a41c91a062e7e2a5edaa7a076423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/b3c10f93533ccdd2b9e718089514ac4c063d2a1a9f92acf4bbd62fa0a18e0713423370.jpg",
     ],
-    variants: {
-      name: "Color",
-      values: [
-        { name: "Rosa y marrón", photos: [] },
-        { name: "Celeste y blanco", photos: [] },
-      ],
-    },
+    variants: [
+      {
+        name: "Color",
+        values: [
+          { name: "Rosa y marrón", photos: [] },
+          { name: "Celeste y blanco", photos: [] },
+        ],
+      },
+    ],
     emoji: "🐱",
   },
   {
@@ -254,9 +295,8 @@ Ancho: 16cm aprox`,
     name: "Tapiz pajaritos",
     description: `Tapiz hecho con la técnica de fillet crochet e hilo de algodón color crema. Ideal para poner dentro de un cuadro!
 Altura: 18cm aprox
-Ancho: 40cm aprox
-Las medidas son aproximadas porque cada tejido esta hecho a mano!`,
-    price: 82500,
+Ancho: 40cm aprox`,
+    price: 48000,
     category: "Decoración",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/bd7150bde478c781f657a9b09907a69bc6208d7856c5a00c5b6a03a1bc422951423370.jpg",
@@ -270,7 +310,7 @@ Las medidas son aproximadas porque cada tejido esta hecho a mano!`,
 Medidas
 Alto: 15cm (+5cm del llavero) aprox.
 Ancho: 11cm aprox.`,
-    price: 18560,
+    price: 16000,
     category: "Keycharms",
     images: [
       "https://d22fxaf9t8d39k.cloudfront.net/156a3e1298dc6c7513b20f37afc56736ed06941113e50ec4631ea8dbd3c5314e423370.jpg",
@@ -287,13 +327,15 @@ Ancho: 11cm aprox.`,
       "https://d22fxaf9t8d39k.cloudfront.net/25b40a5ec41bfdf9cf5a81e50fef38222be3725be03b2e031f6e5a63c75b33ca423370.jpg",
       "https://d22fxaf9t8d39k.cloudfront.net/9ed8c5d347fbfaf0bbdf45671d4145476f0d683cdfc907a327fe2cd21685c99a423370.jpg",
     ],
-    variants: {
-      name: "Variante",
-      values: [
-        { name: "Con moño", photos: [] },
-        { name: "Sin moño", photos: [] },
-      ],
-    },
+    variants: [
+      {
+        name: "Variante",
+        values: [
+          { name: "Con moño", photos: [] },
+          { name: "Sin moño", photos: [] },
+        ],
+      },
+    ],
     emoji: "🐰",
   },
   {
@@ -318,7 +360,7 @@ export const products = PRODUCTS.map((p) => ({
   description: "",
   featured: false,
   unavailable: false,
-  variants: null,
+  variants: [],
   emoji: "🧶",
   ...p,
 }));

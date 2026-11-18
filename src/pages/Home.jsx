@@ -1,21 +1,9 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Chevron } from '../components/Chevron.jsx';
 import { ProductCard } from '../components/ProductCard.jsx';
 import { useCategories, useProducts } from '../context/ProductsContext.jsx';
 import { SHOP_PATH, categoryUrl, tone } from '../lib/format.js';
-
-const Chevron = ({ dir }) => (
-  <svg width="12" height="16" viewBox="0 0 12 16" aria-hidden="true">
-    <path
-      d={dir < 0 ? 'M8.5 2.5C6.6 4.4 4.9 6.1 3 8c1.9 1.9 3.6 3.6 5.5 5.5' : 'M3.5 2.5C5.4 4.4 7.1 6.1 9 8c-1.9 1.9-3.6 3.6-5.5 5.5'}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 const Hero = () => (
   <section className="hero stitch-frame">
@@ -119,7 +107,7 @@ const Categories = () => {
 const STEPS = [
   ['pink', 'Elegí tus favoritos y sumalos al carrito.'],
   ['mint', 'Elegí cómo pagar: transferencia o efectivo con 10% de descuento (solo para retiro).'],
-  ['butter', 'Elegí la entrega: envío por Correo Argentino o retiro gratis en la estación Luis Guillón.'],
+  ['butter', 'Elegí la entrega: envío por Andreani o retiro gratis en la estación Luis Guillón.'],
   ['sky', 'Tocá «Pedir por WhatsApp» y terminamos la compra.'],
 ];
 

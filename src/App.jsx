@@ -37,7 +37,7 @@ export const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/productos" element={<Shop />} />
-      <Route path="/productos/:slug" element={<Product />} />
+      <Route path="/productos/:id" element={<Product />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
     <Footer />

@@ -9,13 +9,11 @@ export const tilt = (i) => `${TILTS[i % TILTS.length]}deg`;
 
 export const SHOP_PATH = '/productos';
 export const categoryUrl = (cat) => (cat === 'Todo' ? SHOP_PATH : `${SHOP_PATH}?categoria=${encodeURIComponent(cat)}`);
-export const productUrl = (p) => `${SHOP_PATH}/${p.slug}`;
+export const productUrl = (p) => `${SHOP_PATH}/${encodeURIComponent(p.id)}`;
 
-// "Moño filet crochet" -> "mono-filet-crochet"
-export const slugify = (s) =>
-  String(s)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
+// precio con los extras de las opciones elegidas ({ [nombre del selector]: opción }); sin elegir va la primera
+export const priceFor = (p, chosen = {}) =>
+  p.variants.reduce((sum, g) => {
+    const value = g.values.find((v) => v.name === chosen[g.name]) || g.values[0];
+    return sum + (value.extra || 0);
+  }, p.price);

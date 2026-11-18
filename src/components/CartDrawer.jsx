@@ -16,7 +16,31 @@ const TrashIcon = () => (
   </svg>
 );
 
-const variantText = (it) => (it.variant ? `${it.variantName || 'Opción'}: ${it.variant}` : '');
+// los items nuevos traen el texto completo en variant; los viejos guardaban el título aparte en variantName
+const variantText = (it) => (it.variant && it.variantName ? `${it.variantName}: ${it.variant}` : it.variant || '');
+
+// en pantalla va una variante por renglón; si el selector es de colores, con la cajita del color elegido
+const VariantLines = ({ item, product }) =>
+  variantText(item)
+    .split(' · ')
+    .map((line) => {
+      const [groupName, valueName] = line.split(': ');
+      const group = product?.variants.find((g) => g.name === groupName);
+      const value = group?.values.find((v) => v.name === valueName);
+      const hasColors = group?.values.some((v) => v.color);
+      return (
+        <small key={line} className="line__variant">
+          {hasColors && value && (
+            <span
+              className={`mini-swatch ${value.color ? '' : 'mini-swatch--none'}`}
+              style={value.color ? { background: value.color } : undefined}
+              aria-hidden="true"
+            />
+          )}
+          {line}
+        </small>
+      );
+    });
 
 const SHIPPING = { domicilio: 'Envío a domicilio', sucursal: 'Envío a sucursal', retiro: 'Retiro' };
 const PICKUP_PLACE = 'la Estación de Tren Luis Guillón, Zona Sur, Buenos Aires';
@@ -72,7 +96,7 @@ const validate = (f) => {
   if (!name) errors.name = 'Escribí tu nombre y apellido';
   else if (name.split(/\s+/).length < 2) errors.name = 'Falta el apellido';
 
-  // para retirar no hacen falta documento ni dirección
+  // para retirar no hacen falta documento, dirección ni contacto (el pedido llega por WhatsApp)
   if (!pickup) {
     // se aceptan puntos y espacios ("12.345.678")
     const doc = f.doc.trim();
@@ -89,13 +113,13 @@ const validate = (f) => {
     const zip = f.zip.trim();
     if (!zip) errors.zip = 'Escribí el código postal';
     else if (!/^(\d{4}|[a-z]\d{4}[a-z]{3})$/i.test(zip)) errors.zip = 'Tiene que tener 4 números (ej. 1406)';
+
+    if (!f.phone.trim()) errors.phone = 'Escribí un teléfono';
+    else if (digits(f.phone).length < 8) errors.phone = 'El número parece incompleto';
+
+    if (!f.email.trim()) errors.email = 'Escribí tu correo';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) errors.email = 'Revisá el correo (ej. nombre@gmail.com)';
   }
-
-  if (!f.phone.trim()) errors.phone = 'Escribí un teléfono';
-  else if (digits(f.phone).length < 8) errors.phone = 'El número parece incompleto';
-
-  if (!f.email.trim()) errors.email = 'Escribí tu correo';
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) errors.email = 'Revisá el correo (ej. nombre@gmail.com)';
   return errors;
 };
 
@@ -210,16 +234,16 @@ export const CartDrawer = () => {
       ...(f.shipping === 'retiro'
         ? [`*Retiro gratis en ${PICKUP_PLACE}*`, `Día: ${formatDay(f.pickupDay)}`, `Hora: ${f.pickupTime}`, `Nombre: ${f.name}`]
         : [
-            `*${SHIPPING[f.shipping]} (Correo Argentino)*`,
+            `*${SHIPPING[f.shipping]} (Andreani)*`,
             f.shipping === 'sucursal' && f.branch ? `Sucursal: ${f.branch}` : null,
             `Nombre: ${f.name}`,
             `${f.docType}: ${f.doc}`,
             `Dirección: ${f.address}`,
             `Localidad: ${f.city}, ${f.province}`,
             `CP: ${f.zip}`,
+            `Teléfono: ${f.phone}`,
+            `Email: ${f.email}`,
           ]),
-      `Teléfono: ${f.phone}`,
-      `Email: ${f.email}`,
     ]
       .filter((l) => l !== null)
       .join('\n');
@@ -303,7 +327,7 @@ export const CartDrawer = () => {
       <p className="checkout__note">
         {pickup
           ? `Retirás sin costo en ${PICKUP_PLACE}${form.payment === 'efectivo' ? ' y abonás en efectivo' : ''}.`
-          : 'Los envíos se hacen por Correo Argentino'}
+          : 'Los envíos se hacen por Andreani'}
       </p>
 
       <fieldset className="colors">
@@ -343,7 +367,7 @@ export const CartDrawer = () => {
               <b>¿Te surgió algo?</b> Podés reagendar el retiro para otra fecha por WhatsApp, <b>solo una vez</b>.
             </p>
             <p>
-              El tiempo de espera en la estación es de <b>30 minutos</b>.
+              El tiempo de espera es de <b>30 minutos</b>.
             </p>
           </aside>
         </>
@@ -352,14 +376,7 @@ export const CartDrawer = () => {
       <Field id="co-name" label="Nombre y apellido completo" error={errors.name}>
         <input type="text" autoComplete="name" {...input('name')} />
       </Field>
-      {pickup ? (
-        <>
-          {phoneField}
-          <Field id="co-email" label="Correo electrónico" error={errors.email}>
-            <input type="email" autoComplete="email" {...input('email')} />
-          </Field>
-        </>
-      ) : (
+      {!pickup && (
         <>
           <div className="checkout__row checkout__row--doc">
             <Field id="co-docType" label="Documento">
@@ -390,7 +407,7 @@ export const CartDrawer = () => {
             <input type="email" autoComplete="email" {...input('email')} />
           </Field>
           {form.shipping === 'sucursal' && (
-            <Field id="co-branch" label="Sucursal de Correo Argentino (si ya sabés cuál)">
+            <Field id="co-branch" label="Sucursal de Andreani (si ya sabés cuál)">
               <input type="text" placeholder="Opcional" {...input('branch')} />
             </Field>
           )}
@@ -435,7 +452,7 @@ export const CartDrawer = () => {
                     {p ? <ProductVisual product={p} className="line__img" /> : <span />}
                     <div className="line__info">
                       <b>{it.name}</b>
-                      {it.variant && <small>{variantText(it)}</small>}
+                      {it.variant && <VariantLines item={it} product={p} />}
                       <span className="price">{money.format(it.price * it.qty)}</span>
                     </div>
                     <div className="qty">
@@ -479,7 +496,7 @@ export const CartDrawer = () => {
                       {p ? <ProductVisual product={p} className="line__img" /> : <span />}
                       <div className="line__info">
                         <b>{it.name}</b>
-                        {it.variant && <small>{variantText(it)}</small>}
+                        {it.variant && <VariantLines item={it} product={p} />}
                         <small>
                           {it.qty} × {money.format(it.price)}
                         </small>
