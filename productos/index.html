@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos · Kimi tejidos</title>
+    <!-- @include partials/head.html -->
+  </head>
+  <body data-page="productos">
+    <!-- @include partials/sprites.html -->
+    <!-- @include partials/header.html -->
+
+    <main>
+      <section class="shop" id="tienda">
+        <div class="section-head">
+          <h1 class="h-script">Productos</h1>
+          <svg class="underline" width="200" height="20"><use href="#squiggle" style="color: var(--pink-deep)"/></svg>
+        </div>
+
+        <div class="toolbar">
+          <div class="tags" id="categoryTags" role="tablist" aria-label="Categorías"></div>
+          <label class="search">
+            <span class="sr-only">Buscar</span>
+            <input type="search" id="search" placeholder="Buscar... ✎" autocomplete="off" />
+          </label>
+        </div>
+
+
+        <div class="grid" id="grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <!-- @include partials/footer.html -->
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
