@@ -1,0 +1,67 @@
+# Publica la tienda en GitHub Pages en cada push a main.
+# Las variables (número de WhatsApp, redes) se cargan en el repo:
+# Settings → Secrets and variables → Actions → Variables
+name: Publicar en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# si se pushea dos veces seguidas, se publica solo la última
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # sin número el botón "Pedir por WhatsApp" no anda, así que mejor no publicar
+      - name: Revisar variables
+        env:
+          VITE_WHATSAPP: ${{ vars.VITE_WHATSAPP }}
+        run: |
+          if [ -z "$VITE_WHATSAPP" ]; then
+            echo "::error::Falta la variable VITE_WHATSAPP (Settings → Secrets and variables → Actions → Variables)"
+            exit 1
+          fi
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_WHATSAPP: ${{ vars.VITE_WHATSAPP }}
+          VITE_INSTAGRAM: ${{ vars.VITE_INSTAGRAM }}
+          VITE_TIKTOK: ${{ vars.VITE_TIKTOK }}
+
+      # GitHub Pages no redirige rutas como /productos/2 a la app: al no encontrar el archivo
+      # sirve 404.html, que es la misma app, y el router muestra la página que corresponde
+      - run: cp dist/index.html dist/404.html
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
